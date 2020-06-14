@@ -85,7 +85,7 @@
         })
         console.log(selectValueStr)
         alert(selectValueStr);
-        var data={'msg':'1','data':[{'year':'2020','province':'jx'}]};
+        var data={'msg':'1','data':[{'year':'2020','province':'jx','date':'06-10','tag':'tag1','comment':'view'}]};
         buildTable(data);
       })
 
@@ -101,14 +101,28 @@
                   $.each(data.data,function(i,n){
                         var $tr = $("<tr>"+
                         "<td><a target='_blank' href='https://github.com/18721336535/springboot_batis_H2'>"+n.year+"</a></td>"+
-                        "<td>"+n.province+"</td>"+
+                        "<td>"+n.date+"</td>"+
+                        "<td>"+n.tag+"</td>"+
+                         "<td> <input name='fzcftj' type='submit' value='viewed' onclick='myclick();'></td>"+
                         "</tr>");
                         var $table = $('table tbody');
                         $table.append($tr);
                   });
-        }
+        }    
     }
 
+    myclick=function(){
+       input=top.document.getElementsByName("fzcftj");
+       input[0].value="提交中";
+  }
+
+</script>
+
+<script type="text/javascript">
+  $(function() {
+  });
+   
+ 
 </script>
 
 </body>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/multiple/docs/css/bootstrap-example.min.css" rel="external nofollow" type="text/css">
+    <link rel="stylesheet" href="/multiple/docs/css/prettify.min.css" rel="external nofollow" type="text/css">
+    <script type="text/javascript" src="/multiple/docs/js/prettify.min.js"></script>
+    <link rel="stylesheet" href="/multiple/dist/css/bootstrap-multiselect.css" rel="external nofollow" type="text/css">
+    <script type="text/javascript" src="/multiple/dist/js/bootstrap-multiselect.js"></script>
+    <meta charset="utf-8" />
+    <title>BINGO</title>
+    <style type="text/css">
+			body,
+			html {
+				background: white;
+				padding: 0px;
+				margin: 0px;
+				font-size: 45px;
+				color: red;
+				text-align: center;
+			}
+
+			th,
+			td {
+				width: 100px;
+			}
+		</style>
+    <script type="text/javascript">
+			window.onload = function() {
+				for (var i = 0; i < 8; i++) {
+					document.getElementById("square" + i).innerHTML = Math.floor(Math.random() * 75) + 1;
+				}
+				document.onmousedown = function(e) { //点击获取表格中的值
+<!--					alert(e.target.innerHTML)-->
+				}
+
+
+				var n={'year':'2020','province':'jx','date':'06-10','tag':'tag1','comment':'view'};
+<!--				for (var i = 0; i < 4; i++) {-->
+<!--                        var $tr = $("<tr>"+-->
+<!--                        "<td><a target='_blank' href='https://github.com/18721336535/springboot_batis_H2'>"+n.year+"</a></td>"+-->
+<!--                        "<td>"+n.date+"</td>"+-->
+<!--                        "<td>"+n.tag+"</td>"+-->
+<!--                         "<td> <input name='fzcftj' type='submit' value='viewed' onclick='myclick();'></td>"+-->
+<!--                        "</tr>");-->
+<!--                        var $table = $('#t1');-->
+<!--                        $table.append($tr);-->
+<!--				}-->
+				  $(function(){
+<!--                        //清空所有的子节点-->
+                        $("#t1").empty();
+                        for( var i = 0; i < 8; i++ ) {
+                            //动态创建一个tr行标签,并且转换成jQuery对象
+                            var $trTemp = $("<tr class='id33'></tr>");
+                            //往行里面追加 td单元格
+                            $trTemp.append("<td name='56'>"+ n.year +"</td>");
+                            $trTemp.append("<td>"+ n.province +"</td>");
+                            $trTemp.append("<td>"+ n.date +"</td>");
+                            $trTemp.append( "<td> <input name='fzcftj' type='submit' value='viewed' onclick='myclick();'></td>");
+                            $trTemp.appendTo("#t1");
+                        }
+                     });
+			}
+			 myclick=function(){
+                $(this).parents('tr');//获取按钮所在du行，
+                $(this).parents('tr').find('.').text();//获取按钮所在行class为的元素的值
+                var id=$($(this).parent().parent().children("td").get(0)).innerHTML;
+                var name=$($(this).parent().parent().children("td").get(1)).innerHTML;
+                alert("id="+id+" name="+name);
+             }
+		</script>
+</head>
+
+<body>
+
+<input id="hello" class="laydate-icon">
+<table border="1px" id="table1">
+    <tr>
+        <th>B</th>
+        <th>I</th>
+        <th>N</th>
+        <th>G</th>
+        <th>O</th>
+    </tr>
+    <tr>
+        <td id="square0"> </td>
+        <td id="square1"> </td>
+        <td id="square2"> </td>
+        <td id="square3"> </td>
+        <td id="square4"> </td>
+    </tr>
+    <tr>
+        <td id="square5"> </td>
+        <td id="square6"> </td>
+        <td id="free">Free</td>
+        <td id="square7"> </td>
+        <td id="square8"> </td>
+    </tr>
+</table>
+<p><a href="script01.html" id="reload">Click here</a> to create a new card</p>
+
+<table id ='t1' class="table">
+</table>
+
+</body>
+
+</html>
