@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<ul id="myTabs" class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab">
+        菜鸟教程</a>
+    </li>
+    <li><a href="#ios" data-toggle="tab">iOS</a></li>
+</ul>
+<div id="myTabContents" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+        <p>菜鸟教程是一个</p>
+    </div>
+
+    <div class="tab-pane fade" id="ios">
+        <p>iOS 是一个由动版本</p>
+<!--        <a href="Login.html">dgd</a>-->
+    </div>
+
+</div>
+<script>
+    $(function () {
+        $('#myTabs li:eq(1) a').tab('show');
+        $('#ios').load('Login.html');
+    });
+
+</script>
+
+
+
+</body>
+</html>

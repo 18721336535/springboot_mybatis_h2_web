@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/multiple/docs/css/bootstrap-example.min.css" rel="external nofollow" type="text/css">
+    <link rel="stylesheet" href="/multiple/docs/css/prettify.min.css" rel="external nofollow" type="text/css">
+    <script type="text/javascript" src="/multiple/docs/js/prettify.min.js"></script>
+    <link rel="stylesheet" href="/multiple/dist/css/bootstrap-multiselect.css" rel="external nofollow" type="text/css">
+    <script type="text/javascript" src="/multiple/dist/js/bootstrap-multiselect.js"></script>
+
+</head>
+<body>
+<div id="d1" style="width:5%;height:800px;float:left;border:1px solid red" >1</div>
+
+<div id="d2" style="width:70%;height:50%;float:left;border:1px solid red; margin-left:10px;margin-top:20px" >hello
+</div>
+
+<div id="d3" style="width:70%;height:50%;float:left;border:1px solid red " >
+  <div class="table-responsive">
+      <table class="table">
+        <thead>
+            <tr id="tr1">
+                <th>
+                    <label id="btn">author</label>
+                    <select id="example-getting-started" multiple="multiple">
+                        <option value="cheese">Cheese</option>
+                        <option value="tomatoes">Tomatoes</option>
+                        <option value="Mozzarella">Mozzarella</option>
+                        <option value="Mushrooms">Mushrooms</option>
+                        <option value="Pepperoni">Pepperoni</option>
+                        <option value="Onions">Onions</option>
+                    </select>
+                </th>
+                <th id="th2">commitId</th>
+                <th id="th3">time</th>
+                <th id="th4">tag</th>
+                <th id="th5">commit</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>产品1</td>
+            <td>23/11/2013</td>
+              <td><a href="https://github.com/18721336535/springboot_batis_H2">myh2</a></td></tr>
+          <tr>
+            <td>产品2</td>
+            <td>10/11/2013</td>
+            <td>发货中</td></tr>
+          <tr>
+            <td>产品3</td>
+            <td>20/10/2013</td>
+            <td>待确认</td></tr>
+          <tr>
+            <td>产品4</td>
+            <td>20/10/2013</td>
+            <td>已退货</td></tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<script>
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      window.prettyPrint() && prettyPrint();
+    });
+
+    // 插件实例
+    $(document).ready(function () {
+      $("#example-getting-started").multiselect();
+      // 点击事件获取所有选中option的value值
+      $("#btn").click(function () {
+        var selectValueStr = [];
+        $("#example-getting-started option:selected").each(function () {
+          selectValueStr.push($(this).val());
+        })
+        console.log(selectValueStr)
+        alert(selectValueStr);
+        var data={'msg':'1','data':[{'year':'2020','province':'jx'}]};
+        buildTable(data);
+      })
+
+    });
+
+
+    function buildTable(data){
+        switch(data.msg){
+            case '0':
+                 $('table tbody').prepend("<tr><td colspan='2'>暂无数据</td></tr>");
+                 break;
+            case '1':
+                  $.each(data.data,function(i,n){
+                        var $tr = $("<tr>"+
+                        "<td><a target='_blank' href='https://github.com/18721336535/springboot_batis_H2'>"+n.year+"</a></td>"+
+                        "<td>"+n.province+"</td>"+
+                        "</tr>");
+                        var $table = $('table tbody');
+                        $table.append($tr);
+                  });
+        }
+    }
+
+</script>
+
+</body>
+</html>
