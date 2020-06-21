@@ -12,7 +12,7 @@
         <div class="_26JdYM">
             <img class="_3LHFA-" src="/images/myimages/comment.jpg" alt="" />
             <div class="_3GKFE3">
-                <textarea class="_1u_H4i" placeholder="写下你的评论..."></textarea>
+                <textarea class="_1u_H4i" placeholder="写下你的评论...">hi</textarea>
                 <div>
                     <div class="_3IXP9Q" style="display: flex;">
                         <div class="SKZUyR">
@@ -22,10 +22,14 @@
                                 </svg></i>
                             <span>Ctrl + Enter 发表</span>
                         </div>
+
                         <div class="_3Tp4of">
-                            <button disabled="" type="button" class="_1OyPqC _3Mi9q9 _1YbC5u"><span>发布</span></button>
-                            <button type="button" class="_1OyPqC _2nzlC_"><span>取消</span></button>
+
+                            <button  type="button" class="_1OyPqC _3Mi9q9 _1YbC5u" id="submitCommit"><span>submit</span></button>
+                            <button disabled="" type="button" class="_1OyPqC _2nzlC_"><span>clear</span></button>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -71,7 +75,7 @@
                 <a class="_1OhGeD" href="/u/684610d1984f" target="_blank" rel="noopener noreferrer"><img class="_1_jhXc" src="images/myimages/comment.jpg" alt="" /></a>
                 <div class="_1K9gkf">
                     <div class="_23G05g">
-                        <a class="_1OhGeD" href="/u/684610d1984f" target="_blank" rel="noopener noreferrer">AndyZeng1</a>
+                        <a class="_1OhGeD" href="/u/684610d1984f" target="_blank" rel="noopener noreferrer">Andy</a>
                         <span class="_3pyYXB">作者</span>
                     </div>
                     <div class="_1xqkrI">
@@ -79,7 +83,7 @@
                         <time datetime="2020-06-20T03:22:40.000Z">06.20 11:22</time>
                     </div>
                     <div class="_2bDGm4">
-                        good
+                       clean code !
                     </div>
                     <div class="_2ti5br">
                         <div class="_3MyyYc">
@@ -104,6 +108,16 @@
         </div>
     </section>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#submitCommit").click(function () {
+             alert("hi-andy--"+commitId);
+                   //ajax
+        });
+     });
+</script>
 
 </body>
 

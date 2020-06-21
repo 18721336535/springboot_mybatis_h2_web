@@ -75,6 +75,9 @@
         cursor: move;
     }
 </style>
+<script type="text/javascript">
+  var commitId;
+</script>
 </head>
 <body>
 <div id="d1" style="width:5%;height:800px;float:left;border:1px solid red" >1</div>
@@ -84,7 +87,7 @@
 
 <div id="d3" style="width:70%;height:50%;float:left;border:1px solid red " >
   <div class="table-responsive">
-      <table class="table">
+      <table class="table" id="mytable">
         <thead>
             <tr id="tr1">
                 <th>
@@ -153,7 +156,18 @@
       })
 
     });
-
+     getThisvale = function(){
+            $("#mytable").on('click','.btnSelect',function(){
+            //获得当前行
+            var currentRow=$(this).closest("tr");
+            var col1=currentRow.find("td:eq(0)").text(); //获得当前行第一个TD值
+            var col2=currentRow.find("td:eq(1)").text(); //获得当前行第二个TD值
+            var col3=currentRow.find("td:eq(2)").text(); //获得当前行第三个TD值
+            var data=col1+"\n"+col2+"\n"+col3;
+            commitId =data;
+            alert(commitId);
+         });
+        }
 
     function buildTable(data){
         switch(data.msg){
@@ -167,16 +181,20 @@
                          "<td id='andy12356986321'>"+n.province+"</td>"+
                         "<td>"+n.date+"</td>"+
                         "<td>"+n.tag+"</td>"+
-                         "<td> <input name='fzcftj' type='submit' value='edit' onclick='myclick();'></td>"+
+                         "<td> <button class='btnSelect' name='fzcftj' onclick='myclick();'>editx</button></td>"+
                          "<td>review</td>"+
                         "</tr>");
                         var $table = $('table tbody');
                         $table.append($tr);
                   });
-        }    
+        }
+        getThisvale();
     }//buildTable
 
+
+
     myclick=function(){
+
 <!--       input=top.document.getElementsByName("fzcftj");-->
 <!--       input[0].value="提交中";-->
 <!--&lt;!&ndash;       window.open ("comment.html", "newwindow", "height=50%, width=50%, margin-top=50px, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");&ndash;&gt;-->
@@ -273,12 +291,6 @@
 
 </script>
 
-<script type="text/javascript">
-  $(function() {
-  });
-   
- 
-</script>
 
 </body>
 </html>
