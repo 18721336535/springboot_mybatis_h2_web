@@ -5,21 +5,18 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
+
+
+
     <title>login</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/multiple/docs/css/bootstrap-example.min.css" rel="external nofollow" type="text/css">
-    <link rel="stylesheet" href="/multiple/docs/css/prettify.min.css" rel="external nofollow" type="text/css">
-    <script type="text/javascript" src="/multiple/docs/js/prettify.min.js"></script>
-    <link rel="stylesheet" href="/multiple/dist/css/bootstrap-multiselect.css" rel="external nofollow" type="text/css">
-    <script type="text/javascript" src="/multiple/dist/js/bootstrap-multiselect.js"></script>
-
     <style type="text/css">
     a{
         text-decoration: none;
         background:#4B4B4B;
-        color: #fff;
+        color: #eee;
         display: block;
     }
     .callout_button{
@@ -55,142 +52,40 @@
     }
     .dialog_content{
         width: 100%;
-        height:450px;
+        height:500px;
         overflow-y:scroll;
         overflow-x:scroll
     }
 
-     .close_button{
-        width: 100%;
-        height:28px;
-        text-align: center;
-        line-height: 30px;
-        color: #fff
-     }
-    #closeBt{
-        border-radius: 20px;
+    .close_button{
         background:#4B4B4B;
-        text-align: center;
-        color: #eee;
-        cursor: move;
+        margin:0 auto;
+        width: 100px;
+        height: 30px;
+        border-radius: 20px;
+        text-align:center;
+        line-height: 20px;
+        color: #eee
+    }
+
+    .close_button:hover{
+        background: black;
     }
 </style>
-</head>
+    </head>
 <body>
-<div id="d1" style="width:5%;height:800px;float:left;border:1px solid red" >1</div>
-
-<!--<div id="d2" style="width:70%;height:50%;float:left;border:1px solid red; margin-left:10px;margin-top:20px" >hello-->
-<!--</div>-->
-
-<div id="d3" style="width:70%;height:50%;float:left;border:1px solid red " >
-  <div class="table-responsive">
-      <table class="table">
-        <thead>
-            <tr id="tr1">
-                <th>
-                    <select id="example-getting-started" multiple="multiple">
-                        <option value="cheese">Cheese</option>
-                        <option value="tomatoes">Tomatoes</option>
-                        <option value="Mozzarella">Mozzarella</option>
-                        <option value="Mushrooms">Mushrooms</option>
-                        <option value="Pepperoni">Pepperoni</option>
-                        <option value="Onions">Onions</option>
-                    </select>
-                    <button id="btn">author-filter</button>
-                </th>
-                <th id="th2">commitId</th>
-                <th id="th3">time</th>
-                <th id="th4">tag</th>
-                <th id="th5">comment</th>
-                <th id="th6">status</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>产品1</td>
-            <td>23/11/2013</td>
-              <td><a href="https://github.com/18721336535/springboot_batis_H2">myh2</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-</div>
-
+<div id="callout" class="button callout_button"><a href="#">弹出对话框</a></div>
 <div id="mask" class="mask"></div>
 <div class="dialog" id="dialog">
     <div class="dialog_head" id="move_part">可拖拽部分</div>
     <div class="dialog_content"></div>
-    <div class="button close_button" id="close"><button id = "closeBt" href="#">关闭对话框</button>
+    <div class="button close_button" id="close"><a href="#">点我关闭对话框</a>
     </div>
 </div>
-
-<script>
-
-</script>
 <script type="text/javascript">
-    $(document).ready(function () {
-      window.prettyPrint() && prettyPrint();
-    });
-
-    // 插件实例
-    $(document).ready(function () {
-      $("#example-getting-started").multiselect();
-      // 点击事件获取所有选中option的value值
-      $("#btn").click(function () {
-            var selectValueStr = [];
-            $("#example-getting-started option:selected").each(function () {
-              selectValueStr.push($(this).val());
-            })
-            console.log(selectValueStr);
-            alert(selectValueStr);
-            var data={'msg':'1','data':[{'id':'233456','province':'jx','date':'06-10','tag':'tag1','comment':'view'},
-            {'id':'65421','province':'sh','date':'06-18','tag':'tag2','comment':'view'}]};
-
-            buildTable(data);
-
-<!--            $.post("user/loginnext",{},function (data) {-->
-<!--                      $('#ios').load('tabletest.html');-->
-<!--             });-->
-      })
-
-    });
-
-
-    function buildTable(data){
-        switch(data.msg){
-            case '0':
-                 $('table tbody').prepend("<tr><td colspan='2'>暂无数据</td></tr>");
-                 break;
-            case '1':
-                  $.each(data.data,function(i,n){
-                        var $tr = $("<tr>"+
-                        "<td><a target='_blank' href='https://github.com/18721336535/springboot_batis_H2'>"+n.id+"</a></td>"+
-                         "<td id='andy12356986321'>"+n.province+"</td>"+
-                        "<td>"+n.date+"</td>"+
-                        "<td>"+n.tag+"</td>"+
-                         "<td> <input name='fzcftj' type='submit' value='edit' onclick='myclick();'></td>"+
-                         "<td>review</td>"+
-                        "</tr>");
-                        var $table = $('table tbody');
-                        $table.append($tr);
-                  });
-        }    
-    }//buildTable
-
-    myclick=function(){
-<!--       input=top.document.getElementsByName("fzcftj");-->
-<!--       input[0].value="提交中";-->
-<!--&lt;!&ndash;       window.open ("comment.html", "newwindow", "height=50%, width=50%, margin-top=50px, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");&ndash;&gt;-->
-<!--       $('#head').load('info_inner.html');-->
-
-
-
+    $(document).ready(function(){
             var $dialog = $("#dialog");
             var $mask = $("#mask");
-
-            $dialog.css("display","block");
-            $mask.css("display","block");
-            $('.dialog_content').load('comment.html');
-            autoCenter($dialog);
 
             //自动居中对话框
             function autoCenter(el){
@@ -267,18 +162,82 @@
             window.onresize = function(){
                 autoCenter($dialog);
             };
-
-  }
-
-
+        });
 </script>
-
-<script type="text/javascript">
-  $(function() {
-  });
-   
- 
-</script>
-
 </body>
-</html>
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="pragma" content="no-cache">-->
+<!--    <meta http-equiv="cache-control" content="no-cache">-->
+<!--    <meta http-equiv="expires" content="0">-->
+
+
+
+<!--    <title>login</title>-->
+<!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--    <style>-->
+<!--&lt;!&ndash;    .black_overlay{&ndash;&gt;-->
+<!--&lt;!&ndash;      display: none;&ndash;&gt;-->
+<!--&lt;!&ndash;      position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;      top: 0%;&ndash;&gt;-->
+<!--&lt;!&ndash;      left: 0%;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;      background-color: black;&ndash;&gt;-->
+<!--&lt;!&ndash;      z-index:1001;&ndash;&gt;-->
+<!--&lt;!&ndash;      -moz-opacity: 0.8;&ndash;&gt;-->
+<!--&lt;!&ndash;      opacity:.80;&ndash;&gt;-->
+<!--&lt;!&ndash;      filter: alpha(opacity=88);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--    .white_content {-->
+<!--      display: none;-->
+<!--      position: absolute;-->
+<!--      top: 25%;-->
+<!--      left: 25%;-->
+<!--      width: 55%;-->
+<!--      height: 55%;-->
+<!--      padding: 20px;-->
+<!--      border: 2px solid orange;-->
+<!--      background-color: white;-->
+<!--      z-index:1002;-->
+<!--      overflow: auto;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <p>示例弹出层：-->
+<!--        <a href = "javascript:void(0)" onclick = "myclick1();">请点这里</a>-->
+<!--    </p>-->
+
+<!--    <div id="light" class="white_content">这是一个层窗口示例程序.-->
+<!--    <a href = "javascript:void(0)" onclick = "myclick2()">点这里关闭本窗口</a>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    <div id="fade" class="black_overlay"></div>&ndash;&gt;-->
+
+<!--  </body>-->
+<!--<script type="text/javascript">-->
+
+<!--    myclick1 = function(){-->
+<!--    var url = 'comment.html';-->
+<!--     window.open(url, 'newwindow', 'height=600, width=800, top=30%,left=30%, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');-->
+
+<!--        document.getElementById("light").style.display='block';-->
+<!--&lt;!&ndash;        document.getElementById('fade').style.display='block';&ndash;&gt;-->
+<!--    }-->
+<!--     myclick2 = function(){-->
+<!--       document.getElementById('light').style.display='none';-->
+<!--&lt;!&ndash;       document.getElementById('fade').style.display='none';&ndash;&gt;-->
+<!--    }-->
+
+<!--</script>-->
+<!--</html>-->

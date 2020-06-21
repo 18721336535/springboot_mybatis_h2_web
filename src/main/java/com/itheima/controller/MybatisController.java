@@ -37,6 +37,7 @@ public class MybatisController {
         result.put("flag",false);
         System.out.println(JSON.toJSONString(map));
         System.out.println(JSON.toJSONString(result));
+        request.getSession().setAttribute("user","1234567890");//登录成功标记
         response.setHeader("Access-Control-Allow-Origin", "*");
         return  result;
 //        //2.封装User对象
@@ -83,7 +84,19 @@ public class MybatisController {
     }
 
 
-
+    @RequestMapping("/user/loginnext")
+    @ResponseBody
+    public Map<String,Object> loginnext(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //1.获取用户名和密码数据
+        Map<String, String[]> map = request.getParameterMap();
+        Map<String, Object> result = new HashMap<>();
+        result.put("flag", false);
+        System.out.println(JSON.toJSONString(map));
+        System.out.println(JSON.toJSONString(request.getCookies()));
+        //request.getSession().setAttribute("user", "1234567890");//登录成功标记
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return result;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(MybatisController.class);
     @RequestMapping("/query")

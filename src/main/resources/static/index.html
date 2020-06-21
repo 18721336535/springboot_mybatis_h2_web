@@ -5,6 +5,9 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
+
+
+
     <title>login</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -13,17 +16,24 @@
 </head>
 <body>
 <ul id="myTabs" class="nav nav-tabs">
-    <li class="active"><a href="#home" data-toggle="tab">
-        菜鸟教程</a>
-    </li>
+    <li class="active"><a href="#home" data-toggle="tab">菜鸟教程</a></li>
     <li><a href="#ios" data-toggle="tab">iOS</a></li>
+    <li><a href="#ad" data-toggle="tab">android</a></li>
+    <li><a href="#wp" data-toggle="tab">wephone</a></li>
 </ul>
+
 <div id="myTabContents" class="tab-content">
     <div class="tab-pane fade in active" id="home">
         <p>菜鸟教程是一个</p>
     </div>
-
+    <div class="tab-pane fade" id="ad">
+        <p>ad是一个</p>
+    </div>
+    <div class="tab-pane fade" id="wp">
+        <p>wp一个</p>
+    </div>
     <div class="tab-pane fade" id="ios">
+<!--        <iframe style="width:1000px;height:500px;" id = "if1">-->
         <p>iOS 是一个由动版本</p>
 <!--        <a href="Login.html">dgd</a>-->
         <form di="f1" method="post" >
@@ -32,7 +42,7 @@
         </form>
         <button id="stb" type="submit" name="submit">submit</button>
     </div>
-    <iframe></iframe>
+
 </div>
 <script>
     $(function () {

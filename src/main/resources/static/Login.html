@@ -26,14 +26,15 @@
 		$(function () {
 			$("#btn_sub").click(function () {
 				$.post("user/login",$("#loginForm").serialize(),function (data) {
-					if(data.flag){
-					    $('#ios').load('Table.html');
-					}
-			        else{
-			            var html_src = 'https://www.baidu.com/index.html';
-                        $("iframe").attr("src", html_src);
-<!--			           $('#ios').load('https://www.baidu.com/index.html');-->
-			        }
+				  $('#ios').load('Table.html');
+<!--					if(data.flag){-->
+<!--					    $('#ios').load('Table.html');-->
+<!--					}-->
+<!--			        else{-->
+<!--			            var html_src = 'https://www.baidu.com/index.html';-->
+<!--                        $("iframe").attr("src", html_src);-->
+<!--&lt;!&ndash;			           $('#ios').load('https://www.baidu.com/index.html');&ndash;&gt;-->
+<!--			        }-->
                 });
             });
         });
@@ -48,7 +49,7 @@
             <form id="loginForm" method="post" accept-charset="utf-8">
                 <input type="hidden" name="action" value="login"/>
                 <input name="username" type="text" placeholder="请输入账号" autocomplete="off">
-                <input name="password" type="text" placeholder="请输入密码" autocomplete="off">
+                <input name="password" type="password" placeholder="请输入密码" autocomplete="off">
                 <div class="submit_btn">
                     <button type="button"  id="btn_sub">登录</button>
                 </div>
