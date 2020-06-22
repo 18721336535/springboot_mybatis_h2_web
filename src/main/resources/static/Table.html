@@ -87,7 +87,17 @@
 
 <div id="d3" style="width:70%;height:50%;float:left;border:1px solid red " >
   <div class="table-responsive">
-      <table class="table" id="mytable">
+      <select name="type" id="userType" style="margin-top:50px">
+           <option value="0">请选择</option>
+           <option value="1">普通类型</option>
+           <option value="2">VIP类型</option>
+      </select>
+      <label id = "lab1">labc</label><button id="tbnxxx1">btn1</button>
+
+      <input type="button" value="按钮上bai的文字duzhi" data-v="改变后dao的文字" onclick="var s=this.value;this.value=this.dataset.v;this.dataset.v=s;"/>
+      <input type="button" value="edit" data-v="edited" onclick="this.value=this.dataset.v;"/>
+
+      <table class="table" id="mytable"  style="margin-top:50px">
         <thead>
             <tr id="tr1">
                 <th>
@@ -139,6 +149,7 @@
       $("#example-getting-started").multiselect();
       // 点击事件获取所有选中option的value值
       $("#btn").click(function () {
+           $('table tbody').empty("");
             var selectValueStr = [];
             $("#example-getting-started option:selected").each(function () {
               selectValueStr.push($(this).val());
@@ -165,6 +176,7 @@
             var col3=currentRow.find("td:eq(2)").text(); //获得当前行第三个TD值
             var data=col1+"\n"+col2+"\n"+col3;
             commitId =data;
+             this.value='ing';
             alert(commitId);
          });
         }
@@ -181,7 +193,8 @@
                          "<td id='andy12356986321'>"+n.province+"</td>"+
                         "<td>"+n.date+"</td>"+
                         "<td>"+n.tag+"</td>"+
-                         "<td> <button class='btnSelect' name='fzcftj' onclick='myclick();'>editx</button></td>"+
+                         "<td> <input type='button' class='btnSelect' value='edit' data-v='edited' name='fzcftj' onclick='myclick();'/></td>"+
+<!--                        <input type="button" value="edit" data-v="edited" onclick="this.value=this.dataset.v;"/>-->
                          "<td>review</td>"+
                         "</tr>");
                         var $table = $('table tbody');
@@ -194,6 +207,14 @@
 
 
     myclick=function(){
+            var myType = document.getElementById("userType");//获取select对象
+            var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
+            var v1= myType.options[index].value;//获取选项中options的value值
+            var v2= myType.options[index].text;//获取选项中options的text值
+            myType.options[index].text = "赋给的值";
+            document.getElementById("tbnxxx1").innerHTML  = "赋给的值";
+            document.getElementById("lab1").innerHTML = "赋给的值ya";
+
 
 <!--       input=top.document.getElementsByName("fzcftj");-->
 <!--       input[0].value="提交中";-->
