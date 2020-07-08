@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="right" style="padding:10px">
+    <button class="layui-btn" id = "new-order-btn" >新建</button>
+    <button class="layui-btn" id="export-btn" >导出Excel</button>
+</div>
+<form class="layui-form" action="">
+    <div id = "searchDiv">
+        <table id = "table_test" width="100%">
+            <tbody id="Tb_test1">
+            <tr>
+                <td class = "td_search">
+                    <label class="layui-form-label lableWidth">订餐人</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="dcr" id = "dcr" placeholder="请输入订餐人" class="layui-input al-left"></input>
+                    </div>
+                </td>
+                <td class = "td_search">
+                    <label class="layui-form-label">订餐单位</label>
+                    <div class="layui-input-block">
+                        <select name="dcdw" id = "dcdw">
+                            <option value=""></option>
+                            <option value="dw1">单位1</option>
+                            <option value="dw2">单位2</option>
+                        </select>
+                    </div>
+                </td>
+                <td class = "td_search">
+                    <label class="layui-form-label">订餐时段</label>
+                    <div class="layui-input-block">
+                        <select name="dcsd" id = "dcsd">
+                            <option value=""></option>
+                            <option value="zc">早餐</option>
+                            <option value="wc">午餐</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+/*<![CDATA[ */
+$(function(){
+	  $("#new-order-btn").on('click',function(){
+			  var params = "name="+$('#dcr').val()+"&dcdw="+$('#dcdw').val()+"&dcsd="+$('#dcsd').val();
+
+			  var url = "pagejumpandparam_1.html?"+params;
+			   console.log("url ="+url);
+			  //方法1
+			  window.open(url,"_blank");
+	   });
+});
+
+/*]]>*/
+</script>
+
+</body>
+</html>
