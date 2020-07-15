@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/multiple/docs/css/bootstrap-example.min.css" rel="external nofollow" type="text/css">
-    <link rel="stylesheet" href="/multiple/docs/css/prettify.min.css" rel="external nofollow" type="text/css">
-    <script type="text/javascript" src="/multiple/docs/js/prettify.min.js"></script>
+<!--    <link rel="stylesheet" href="/multiple/docs/css/bootstrap-example.min.css" rel="external nofollow" type="text/css">-->
+<!--    <link rel="stylesheet" href="/multiple/docs/css/prettify.min.css" rel="external nofollow" type="text/css">-->
+<!--    <script type="text/javascript" src="/multiple/docs/js/prettify.min.js"></script>-->
     <link rel="stylesheet" href="/multiple/dist/css/bootstrap-multiselect.css" rel="external nofollow" type="text/css">
     <script type="text/javascript" src="/multiple/dist/js/bootstrap-multiselect.js"></script>
 
     <style type="text/css">
     a{
         text-decoration: none;
-        background:#4B4B4B;
-        color: #fff;
+<!--        background:#4B4B4B;-->
+<!--        color: #fff;-->
         display: block;
     }
     .callout_button{
@@ -80,12 +80,12 @@
 </script>
 </head>
 <body>
-<div id="d1" style="width:5%;height:800px;float:left;border:1px solid red" >1</div>
+<div id="d1" style="width:5%;height:1000px;float:left;border:1px solid red" >1</div>
 
 <!--<div id="d2" style="width:70%;height:50%;float:left;border:1px solid red; margin-left:10px;margin-top:20px" >hello-->
 <!--</div>-->
 
-<div id="d3" style="width:70%;height:50%;float:left;border:1px solid red " >
+<div id="d3" style="width:70%;height:700px;float:left;border:1px solid red " >
   <div class="table-responsive">
       <select name="type" id="userType" style="margin-top:50px">
            <option value="0">请选择</option>
@@ -97,7 +97,7 @@
       <input type="button" value="按钮上bai的文字duzhi" data-v="改变后dao的文字" onclick="var s=this.value;this.value=this.dataset.v;this.dataset.v=s;"/>
       <input type="button" value="edit" data-v="edited" onclick="this.value=this.dataset.v;"/>
 
-      <table class="table" id="mytable"  style="margin-top:50px">
+      <table class="table" id="mytable"  style="margin-top:50px;height:400px">
         <thead>
             <tr id="tr1">
                 <th>
@@ -118,7 +118,7 @@
                 <th id="th6">status</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="height:200px">
           <tr>
             <td>产品1</td>
             <td>23/11/2013</td>
@@ -141,12 +141,15 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-      window.prettyPrint() && prettyPrint();
+<!--      window.prettyPrint() && prettyPrint();-->
     });
 
     // 插件实例
     $(document).ready(function () {
+     $("#example-getting-started").append('<option value="1Zengbingqing">1Zengbingqing</option>');
       $("#example-getting-started").multiselect();
+
+  $("#example-getting-started").append('<option value="Zengbingqingxx">Zengbingqingxx</option>');
       // 点击事件获取所有选中option的value值
       $("#btn").click(function () {
            $('table tbody').empty("");

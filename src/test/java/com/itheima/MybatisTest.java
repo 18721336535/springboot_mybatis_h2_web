@@ -23,5 +23,11 @@ public class MybatisTest {
         List<User> users = userMapper.queryUserList();
         System.out.println(JSON.toJSONString(users));
     }
+    @Test
+    public void emailTest(){
+
+
+
+    }
 
 }
