@@ -9,4 +9,5 @@ public class SpringbootMybatisApplication {
 		SpringApplication.run(SpringbootMybatisApplication.class, args);
 	}
 //x idj t2 vx1
+
 }

@@ -8,7 +8,7 @@ public class User {
     private String USE_AGE;
 
 
-    public Long getUSE_ID() {
+    public Long getUSE_ID() {//
         return USE_ID;
     }
 
