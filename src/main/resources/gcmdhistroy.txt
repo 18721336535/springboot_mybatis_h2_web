@@ -1,0 +1,96 @@
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git branch
+* master
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git branch -av
+* master                                                                    ac2b                            50c thread test
+  remotes/origin/HEAD                                                       -> o                            rigin/master
+  remotes/origin/dependabot/maven/commons-beanutils-commons-beanutils-1.9.4 6f19                            d8e Bump commons-beanutils from 1.9.2 to 1.9.4
+  remotes/origin/dev                                                        ac2b                            50c thread test
+  remotes/origin/master                                                     ac2b                            50c thread test
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ checkout -b dev
+bash: checkout: command not found
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git branch
+* dev
+  master
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git pull
+remote: Enumerating objects: 31, done.
+remote: Counting objects: 100% (31/31), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 24 (delta 10), reused 22 (delta 8), pack-reused 0
+Unpacking objects: 100% (24/24), done.
+From https://github.com/18721336535/springboot_mybatis_h2_web
+   ac2b50c..1d45bae  master     -> origin/master
+   ac2b50c..baec8d7  dev        -> origin/dev
+Updating ac2b50c..1d45bae
+Fast-forward
+ src/main/java/com/itheima/SpringbootMybatisApplication.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git checkout -b dev
+fatal: A branch named 'dev' already exists.
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git branch
+* dev
+  master
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$ git pull origin dev
+From https://github.com/18721336535/springboot_mybatis_h2_web
+ * branch            dev        -> FETCH_HEAD
+Updating ac2b50c..baec8d7
+Fast-forward
+ src/main/java/com/itheima/SpringbootMybatisApplication.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+zbq@DESKTOP-VUCA48E MINGW64 ~/Desktop/GCT/springboot_mybatis_h2_web (dev)
+$
