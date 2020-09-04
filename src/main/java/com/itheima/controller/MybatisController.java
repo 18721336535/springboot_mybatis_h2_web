@@ -28,7 +28,7 @@ public class MybatisController {
     @Autowired
     private UserMapper userMapper;
     //id t2 vx1
-
+    //1, 2 3
     @RequestMapping("/user/login")
     @ResponseBody
     public Map<String,Object> login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
