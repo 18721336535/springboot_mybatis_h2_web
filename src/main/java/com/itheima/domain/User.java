@@ -1,5 +1,8 @@
 package com.itheima.domain;
-
+/**
+ * @Author: zengbingqing2
+ * @Description:
+**/
 public class User {
 
     private Long USE_ID;
