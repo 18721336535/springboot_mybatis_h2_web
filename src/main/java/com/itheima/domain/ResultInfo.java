@@ -10,7 +10,7 @@ public class ResultInfo implements Serializable {
     private Object data;//后端返回结果数据对象
     private String errorMsg;//发生异常的错误消息
 
-    //无参构造方法
+    //无参构造方法 3
     public ResultInfo() {
     }
     public ResultInfo(boolean flag) {
