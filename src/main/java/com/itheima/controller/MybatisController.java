@@ -32,7 +32,7 @@ public class MybatisController {
     @RequestMapping("/user/login")
     @ResponseBody
     public Map<String,Object> login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1.获取用户名和密码数据 3
+        //1.获取用户名和密码数据 3 4
         Map<String, String[]> map = request.getParameterMap();
         Map<String,Object> result = new HashMap<>();
         result.put("flag",false);
