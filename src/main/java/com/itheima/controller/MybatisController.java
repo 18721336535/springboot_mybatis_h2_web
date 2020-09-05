@@ -21,7 +21,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @Author: zengbingqing master
+ * @Description:
+**/
 @Controller
 public class MybatisController {
 
