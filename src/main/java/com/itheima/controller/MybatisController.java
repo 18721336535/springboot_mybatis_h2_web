@@ -40,7 +40,7 @@ public class MybatisController {
         System.out.println(JSON.toJSONString(result));
         request.getSession().setAttribute("user","1234567890");//登录成功标记
         response.setHeader("Access-Control-Allow-Origin", "*");
-		//x t2 t3
+		//x t2 t3 t3-c
         return  result;
 //        //2.封装User对象
 //        User user = new User();
