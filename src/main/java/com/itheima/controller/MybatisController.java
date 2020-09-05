@@ -23,6 +23,12 @@ import java.util.List;
 import java.util.Map;
 /**
  * @Author: zengbingqing master
+ * @Author: zengbingqing cfg test x1-1 add x1-2 add x1-3 add x1-4
+ * @Author: zengbingqing cfg test x2-1
+ * @Author: zengbingqing cfg test x1-1
+ * @Author: zengbingqing cfg test x1-1 add x1-2
+ * @Author: zengbingqing cfg test x1-1 add x1-2 add x1-3
+ * @Author: zengbingqing zengbingqing add dev+ release_1 b1
  * @Description:
 **/
 @Controller
@@ -30,12 +36,12 @@ public class MybatisController {
 
     @Autowired
     private UserMapper userMapper;
-    //id t2 vx1
-
+    //id t2 vx1 
+    //1, 2 3
     @RequestMapping("/user/login")
     @ResponseBody
     public Map<String,Object> login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1.获取用户名和密码数据
+        //1.获取用户名和密码数据 3 4
         Map<String, String[]> map = request.getParameterMap();
         Map<String,Object> result = new HashMap<>();
         result.put("flag",false);
@@ -43,7 +49,7 @@ public class MybatisController {
         System.out.println(JSON.toJSONString(result));
         request.getSession().setAttribute("user","1234567890");//登录成功标记
         response.setHeader("Access-Control-Allow-Origin", "*");
-		//x t2 t3
+		//x t2 t3 t3-c
         return  result;
 //        //2.封装User对象
 //        User user = new User();
