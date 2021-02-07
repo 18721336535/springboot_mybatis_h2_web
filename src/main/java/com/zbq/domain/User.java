@@ -1,4 +1,4 @@
-package com.itheima.domain;
+package com.zbq.domain;
 /**
  * @Author: zengbingqing2
  * @Description:

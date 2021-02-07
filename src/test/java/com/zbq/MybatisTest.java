@@ -1,8 +1,8 @@
-package com.itheima;
+package com.zbq;
 
 import com.alibaba.fastjson.JSON;
-import com.itheima.domain.User;
-import com.itheima.mapper.UserMapper;
+import com.zbq.domain.User;
+import com.zbq.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.itheima.thread;
+package com.zbq.thread;
 
 import com.alibaba.fastjson.JSON;
 

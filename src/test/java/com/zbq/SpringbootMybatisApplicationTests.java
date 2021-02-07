@@ -1,4 +1,4 @@
-package com.itheima;
+package com.zbq;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

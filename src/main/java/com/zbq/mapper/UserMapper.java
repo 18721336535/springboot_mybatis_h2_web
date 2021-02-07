@@ -1,6 +1,6 @@
-package com.itheima.mapper;
+package com.zbq.mapper;
 
-import com.itheima.domain.User;
+import com.zbq.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
