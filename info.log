@@ -2,3 +2,138 @@
 =======
 
 >>>>>>> fa62e7fac9aa0635f01a18702b5a572fec6fca46
+[INFO] [2021-02-07 19:54:00][org.hibernate.validator.internal.util.Version - 21]HV000001: Hibernate Validator 6.0.9.Final
+[INFO] [2021-02-07 19:54:01][com.zbq.SpringbootMybatisApplication - 50]Starting SpringbootMybatisApplication on DESKTOP-VUCA48E with PID 10276 (C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web\target\classes started by zbq in C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web)
+[INFO] [2021-02-07 19:54:01][com.zbq.SpringbootMybatisApplication - 659]No active profile set, falling back to default profiles: default
+[INFO] [2021-02-07 19:54:01][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - 590]Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10a035a0: startup date [Sun Feb 07 19:54:01 CST 2021]; root of context hierarchy
+[INFO] [2021-02-07 19:54:02][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - 328]Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$433f2d48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO] [2021-02-07 19:54:02][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 91]Tomcat initialized with port(s): 9088 (http)
+[INFO] [2021-02-07 19:54:04][org.springframework.web.context.ContextLoader - 285]Root WebApplicationContext: initialization completed in 2749 ms
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet dispatcherServlet mapped to [/]
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet webServlet mapped to [/h2/*]
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO] [2021-02-07 19:54:04][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'requestContextFilter' to: [/*]
+[INFO] [2021-02-07 19:54:04][com.zaxxer.hikari.HikariDataSource - 110]HikariPool-1 - Starting...
+[INFO] [2021-02-07 19:54:04][com.zaxxer.hikari.HikariDataSource - 123]HikariPool-1 - Start completed.
+[INFO] [2021-02-07 19:54:04][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/schema.sql]
+[INFO] [2021-02-07 19:54:04][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/schema.sql] in 15 ms.
+[INFO] [2021-02-07 19:54:04][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/data.sql]
+[INFO] [2021-02-07 19:54:04][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/data.sql] in 16 ms.
+[INFO] [2021-02-07 19:54:04][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 361]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-07 19:54:04][org.hibernate.jpa.internal.util.LogHelper - 31]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2021-02-07 19:54:04][org.hibernate.Version - 45]HHH000412: Hibernate Core {5.2.16.Final}
+[INFO] [2021-02-07 19:54:04][org.hibernate.cfg.Environment - 213]HHH000206: hibernate.properties not found
+[INFO] [2021-02-07 19:54:04][org.hibernate.annotations.common.Version - 66]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2021-02-07 19:54:05][org.hibernate.dialect.Dialect - 157]HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO] [2021-02-07 19:54:05][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 415]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - 574]Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10a035a0: startup date [Sun Feb 07 19:54:01 CST 2021]; root of context hierarchy
+[WARN] [2021-02-07 19:54:06][org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - 235]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/query]}" onto public java.util.List<com.zbq.domain.User> com.zbq.controller.MybatisController.queryUserList()
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/login]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/loginnext]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.loginnext(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-07 19:54:06][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-07 19:54:06][org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - 56]Adding welcome page: class path resource [static/index.html]
+[INFO] [2021-02-07 19:54:06][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 433]Registering beans for JMX exposure on startup
+[INFO] [2021-02-07 19:54:06][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 895]Bean with name 'dataSource' has been autodetected for JMX exposure
+[INFO] [2021-02-07 19:54:06][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 668]Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+[INFO] [2021-02-07 19:54:06][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 206]Tomcat started on port(s): 9088 (http) with context path ''
+[INFO] [2021-02-07 19:54:06][com.zbq.SpringbootMybatisApplication - 59]Started SpringbootMybatisApplication in 6.592 seconds (JVM running for 7.254)
+[INFO] [2021-02-07 20:00:50][org.springframework.web.servlet.DispatcherServlet - 494]FrameworkServlet 'dispatcherServlet': initialization started
+[INFO] [2021-02-07 20:00:50][org.springframework.web.servlet.DispatcherServlet - 509]FrameworkServlet 'dispatcherServlet': initialization completed in 42 ms
+[WARN] [2021-02-07 20:44:45][com.zaxxer.hikari.pool.HikariPool - 756]HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m9s922ms82µs900ns).
+[INFO] [2021-02-17 13:55:41][org.hibernate.validator.internal.util.Version - 21]HV000001: Hibernate Validator 6.0.9.Final
+[INFO] [2021-02-17 13:55:41][com.zbq.SpringbootMybatisApplication - 50]Starting SpringbootMybatisApplication on DESKTOP-VUCA48E with PID 9228 (C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web\target\classes started by zbq in C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web)
+[INFO] [2021-02-17 13:55:41][com.zbq.SpringbootMybatisApplication - 659]No active profile set, falling back to default profiles: default
+[INFO] [2021-02-17 13:55:41][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - 590]Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@727803de: startup date [Wed Feb 17 13:55:41 CST 2021]; root of context hierarchy
+[INFO] [2021-02-17 13:55:42][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - 328]Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7438399f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO] [2021-02-17 13:55:44][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 91]Tomcat initialized with port(s): 9088 (http)
+[INFO] [2021-02-17 13:55:46][org.springframework.web.context.ContextLoader - 285]Root WebApplicationContext: initialization completed in 4627 ms
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet dispatcherServlet mapped to [/]
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet webServlet mapped to [/h2/*]
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO] [2021-02-17 13:55:46][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'requestContextFilter' to: [/*]
+[INFO] [2021-02-17 13:55:46][com.zaxxer.hikari.HikariDataSource - 110]HikariPool-1 - Starting...
+[INFO] [2021-02-17 13:55:47][com.zaxxer.hikari.HikariDataSource - 123]HikariPool-1 - Start completed.
+[INFO] [2021-02-17 13:55:47][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/schema.sql]
+[INFO] [2021-02-17 13:55:47][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/schema.sql] in 13 ms.
+[INFO] [2021-02-17 13:55:47][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/data.sql]
+[INFO] [2021-02-17 13:55:47][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/data.sql] in 3 ms.
+[INFO] [2021-02-17 13:55:47][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 361]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-17 13:55:47][org.hibernate.jpa.internal.util.LogHelper - 31]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2021-02-17 13:55:47][org.hibernate.Version - 45]HHH000412: Hibernate Core {5.2.16.Final}
+[INFO] [2021-02-17 13:55:47][org.hibernate.cfg.Environment - 213]HHH000206: hibernate.properties not found
+[INFO] [2021-02-17 13:55:47][org.hibernate.annotations.common.Version - 66]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2021-02-17 13:55:47][org.hibernate.dialect.Dialect - 157]HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO] [2021-02-17 13:55:48][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 415]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - 574]Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@727803de: startup date [Wed Feb 17 13:55:41 CST 2021]; root of context hierarchy
+[WARN] [2021-02-17 13:55:48][org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - 235]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/login]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/loginnext]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.loginnext(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/query]}" onto public java.util.List<com.zbq.domain.User> com.zbq.controller.MybatisController.queryUserList()
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2021-02-17 13:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2021-02-17 13:55:49][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 13:55:49][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 13:55:49][org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - 56]Adding welcome page: class path resource [static/index.html]
+[INFO] [2021-02-17 13:55:49][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 433]Registering beans for JMX exposure on startup
+[INFO] [2021-02-17 13:55:49][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 895]Bean with name 'dataSource' has been autodetected for JMX exposure
+[INFO] [2021-02-17 13:55:49][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 668]Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+[INFO] [2021-02-17 13:55:49][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 206]Tomcat started on port(s): 9088 (http) with context path ''
+[INFO] [2021-02-17 13:55:49][com.zbq.SpringbootMybatisApplication - 59]Started SpringbootMybatisApplication in 8.06 seconds (JVM running for 8.487)
+[INFO] [2021-02-17 14:35:49][org.hibernate.validator.internal.util.Version - 21]HV000001: Hibernate Validator 6.0.9.Final
+[INFO] [2021-02-17 14:35:50][com.zbq.SpringbootMybatisApplication - 50]Starting SpringbootMybatisApplication on DESKTOP-VUCA48E with PID 7764 (C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web\target\classes started by zbq in C:\Users\zbq\Desktop\gitTest\Springboot_H2_web_repository_1\springboot_mybatis_h2_web)
+[INFO] [2021-02-17 14:35:50][com.zbq.SpringbootMybatisApplication - 659]No active profile set, falling back to default profiles: default
+[INFO] [2021-02-17 14:35:50][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - 590]Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43a0cee9: startup date [Wed Feb 17 14:35:50 CST 2021]; root of context hierarchy
+[INFO] [2021-02-17 14:35:51][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - 328]Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f05c387f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[INFO] [2021-02-17 14:35:51][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 91]Tomcat initialized with port(s): 9088 (http)
+[INFO] [2021-02-17 14:35:53][org.springframework.web.context.ContextLoader - 285]Root WebApplicationContext: initialization completed in 3015 ms
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet dispatcherServlet mapped to [/]
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.ServletRegistrationBean - 185]Servlet webServlet mapped to [/h2/*]
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO] [2021-02-17 14:35:53][org.springframework.boot.web.servlet.FilterRegistrationBean - 244]Mapping filter: 'requestContextFilter' to: [/*]
+[INFO] [2021-02-17 14:35:53][com.zaxxer.hikari.HikariDataSource - 110]HikariPool-1 - Starting...
+[INFO] [2021-02-17 14:35:53][com.zaxxer.hikari.HikariDataSource - 123]HikariPool-1 - Start completed.
+[INFO] [2021-02-17 14:35:53][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/schema.sql]
+[INFO] [2021-02-17 14:35:53][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/schema.sql] in 12 ms.
+[INFO] [2021-02-17 14:35:53][org.springframework.jdbc.datasource.init.ScriptUtils - 444]Executing SQL script from class path resource [db/data.sql]
+[INFO] [2021-02-17 14:35:53][org.springframework.jdbc.datasource.init.ScriptUtils - 510]Executed SQL script from class path resource [db/data.sql] in 4 ms.
+[INFO] [2021-02-17 14:35:54][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 361]Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-17 14:35:54][org.hibernate.jpa.internal.util.LogHelper - 31]HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] [2021-02-17 14:35:54][org.hibernate.Version - 45]HHH000412: Hibernate Core {5.2.16.Final}
+[INFO] [2021-02-17 14:35:54][org.hibernate.cfg.Environment - 213]HHH000206: hibernate.properties not found
+[INFO] [2021-02-17 14:35:54][org.hibernate.annotations.common.Version - 66]HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[INFO] [2021-02-17 14:35:54][org.hibernate.dialect.Dialect - 157]HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[INFO] [2021-02-17 14:35:55][org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - 415]Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - 574]Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@43a0cee9: startup date [Wed Feb 17 14:35:50 CST 2021]; root of context hierarchy
+[WARN] [2021-02-17 14:35:55][org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - 235]spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/loginnext]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.loginnext(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/user/login]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.zbq.controller.MybatisController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/query]}" onto public java.util.List<com.zbq.domain.User> com.zbq.controller.MybatisController.queryUserList()
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 547]Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 14:35:55][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - 373]Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO] [2021-02-17 14:35:55][org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - 56]Adding welcome page: class path resource [static/index.html]
+[INFO] [2021-02-17 14:35:56][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 433]Registering beans for JMX exposure on startup
+[INFO] [2021-02-17 14:35:56][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 895]Bean with name 'dataSource' has been autodetected for JMX exposure
+[INFO] [2021-02-17 14:35:56][org.springframework.jmx.export.annotation.AnnotationMBeanExporter - 668]Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+[INFO] [2021-02-17 14:35:56][org.springframework.boot.web.embedded.tomcat.TomcatWebServer - 206]Tomcat started on port(s): 9088 (http) with context path ''
+[INFO] [2021-02-17 14:35:56][com.zbq.SpringbootMybatisApplication - 59]Started SpringbootMybatisApplication in 6.56 seconds (JVM running for 7.084)
