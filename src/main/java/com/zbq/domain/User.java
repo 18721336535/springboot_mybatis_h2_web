@@ -5,41 +5,94 @@ package com.zbq.domain;
 **/
 public class User {
 
-    private Long USE_ID;
-    private String USE_NAME;
-    private String USE_SEX;
-    private String USE_AGE;
+    private Long id;
+    private String userName;
+    private String userIdNo;
+    private String userSex;
+    private int userAge;
+    private String phoneNum;
+    private String homeTownAddress;
+    private String email;
+    private int pageSize = 3;
+    private int offset =0;
 
-
-    public Long getUSE_ID() {//
-        return USE_ID;
+    public int getPageSize() {
+        return pageSize;
     }
 
-    public void setUSE_ID(Long USE_ID) {
-        this.USE_ID = USE_ID;
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
     }
 
-    public String getUSE_NAME() {
-        return USE_NAME;
+    public int getOffset() {
+        return offset;
     }
 
-    public void setUSE_NAME(String USE_NAME) {
-        this.USE_NAME = USE_NAME;
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 
-    public String getUSE_SEX() {
-        return USE_SEX;
+    public Long getId() {
+        return id;
     }
 
-    public void setUSE_SEX(String USE_SEX) {
-        this.USE_SEX = USE_SEX;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getUSE_AGE() {
-        return USE_AGE;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUSE_AGE(String USE_AGE) {
-        this.USE_AGE = USE_AGE;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserIdNo() {
+        return userIdNo;
+    }
+
+    public void setUserIdNo(String userIdNo) {
+        this.userIdNo = userIdNo;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
+    }
+
+    public int getUserAge() {
+        return userAge;
+    }
+
+    public void setUserAge(int userAge) {
+        this.userAge = userAge;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getHomeTownAddress() {
+        return homeTownAddress;
+    }
+
+    public void setHomeTownAddress(String homeTownAddress) {
+        this.homeTownAddress = homeTownAddress;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

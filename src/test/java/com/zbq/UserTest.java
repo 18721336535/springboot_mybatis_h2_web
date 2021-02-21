@@ -48,11 +48,14 @@ public class UserTest {
      */
     @Test
     public void queryUserList(){
-        List<User> users = userMapper.queryUserList();
-        for(User user : users){
+//        List<User> users = userMapper.queryUserList();
+        User userParm = new User();
+        userParm.setOffset(0);
+        userParm.setPageSize(2);
+        List<User> userList = userMapper.queryUsers(userParm);
+        for(User user : userList){
             System.out.println("-----每个用户的信息------");
-            System.out.println(user);
-            System.out.println(user.getUSE_ID());
+            System.out.println(user.getUserName());
         }
     }
 

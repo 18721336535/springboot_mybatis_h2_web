@@ -5,4 +5,13 @@
     <select id="queryUserList" resultType="user">
         select * from user
     </select>
+    <!-- 定义封装account和user的resultMap -->
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="userSex" column="sex"></result>
+    </resultMap>
+    <select id="queryUsers" parameterType="user" resultMap="userMap">
+        select id,username,sex from user order by id limit #{pageSize} offset #{offset}
+    </select>
 </mapper>
