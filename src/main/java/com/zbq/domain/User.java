@@ -1,4 +1,7 @@
 package com.zbq.domain;
+
+import java.util.Objects;
+
 /**
  * @Author: zengbingqing2
  * @Description:
@@ -95,4 +98,20 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public int hashCode(){
+        int result = 1;
+        int prime = 3;
+        return result*prime+ (userIdNo == null ? 0:userIdNo.hashCode());
+    }
+    @Override
+    public boolean equals(Object obj){
+        User other = (User)obj;
+        boolean a =  Objects.equals(userName,other.userName);
+        boolean b= Objects.equals(userIdNo,other.userIdNo);
+        return a && b;
+    }
+
+
 }

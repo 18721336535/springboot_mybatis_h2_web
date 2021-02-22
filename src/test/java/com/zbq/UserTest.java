@@ -11,6 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -57,6 +59,31 @@ public class UserTest {
             System.out.println("-----每个用户的信息------");
             System.out.println(user.getUserName());
         }
+    }
+
+    /*调用Arrays.asList()生产的List的add、remove方法时报异常，
+      这是由Arrays.asList() 返回的是Arrays的内部类ArrayList， 而不是java.util.ArrayList。
+      Arrays的内部类ArrayList和java.util.ArrayList都是继承AbstractList，remove、add等方法AbstractList中是默认throw UnsupportedOperationException而且不作任何操作。
+      java.util.ArrayList重新了这些方法而Arrays的内部类ArrayList没有重新，所以会抛出异常。*/
+    @Test
+    public void lstOperationTest(){
+        User ua = new User();
+        ua.setUserName("123");
+        ua.setUserIdNo(null);
+        List<User> lista = new ArrayList<>(); lista.add(ua);
+        //List<User> lista = Arrays.asList(ua);
+
+        User ub = new User();
+        ub.setUserName("1236");
+        ub.setUserIdNo("235");
+        List<User> listb = new ArrayList<>(); listb.add(ub);
+        //List<User> listb = Arrays.asList(ub);
+
+
+        lista.removeAll(listb);
+        lista.addAll(listb);
+
+
     }
 
 
