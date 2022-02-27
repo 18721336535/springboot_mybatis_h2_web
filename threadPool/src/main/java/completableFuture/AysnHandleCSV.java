@@ -11,19 +11,37 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 public class AysnHandleCSV {
-    int pp=0;
+    public int pp=0;
     AysnHandleCSV(int h){
         pp =h;
     }
     public  void main1() throws ExecutionException, InterruptedException {
-        ExecutorService executorService = new ThreadPoolExecutor(10,20,30, TimeUnit.SECONDS,
-                new ArrayBlockingQueue<Runnable>(10), r -> {
-            Thread t = new Thread(r);
-            return t;
-        },new ThreadPoolExecutor.AbortPolicy());
-
+        int poolSize=1;
+        int m = 1;
         AtomicInteger i = new AtomicInteger();
-        List<String> lst = Arrays.asList("n1.csv","n2.csv","n3.csv","1","j");
+        ExecutorService executorService = new ThreadPoolExecutor(poolSize, 2, 30, TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(m), r -> {
+                    Thread t = new Thread( r);
+                    int g = i.getAndAdd(1);
+                    t.setName("MatrixReleseThreadName"+g);
+                    t.setDaemon(true);
+                    return t;
+                }
+                ,  new ThreadPoolExecutor.AbortPolicy()/*(r, executor) ->{
+            System.out.println(r.toString()+"is rejected! in "+Thread.currentThread().getName());
+            try {
+//                Thread.sleep(0);
+//                executor.getQueue().take();
+                executor.getQueue().put(r);
+                System.out.println("reput tast to ues!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }*/
+        );
+
+
+        List<String> lst = Arrays.asList("n1.csv","n2.csv","n3.csv","n4.csv");
         List<CompletableFuture> futureList = new ArrayList<>();
 //        Function<String,String> getCSVFromRemote =(x)->{
 //            System.out.println("--getCSVFromRemote--");
@@ -39,7 +57,7 @@ public class AysnHandleCSV {
 
         Function<String,Boolean> insertCsvToDB =(x)->{
             try {
-                Thread.sleep(10000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -53,7 +71,7 @@ public class AysnHandleCSV {
 
         Function<String,List<String>> parseCSV = (x) ->{
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1);
                 System.out.println(x);
                 addfilecontent(x + "\r\n");
                 if (x.isEmpty()) return new ArrayList<String>();
@@ -64,8 +82,9 @@ public class AysnHandleCSV {
         };
         Function<String,Boolean> parseCSV1 = (x) ->{
                     try {
+                        System.out.println("executed  ! in "+Thread.currentThread().getName());
                         if(x.isEmpty()) Thread.sleep(10000);
-                        else Thread.sleep(1000);
+                        else Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -79,23 +98,7 @@ public class AysnHandleCSV {
                     else return false;
                 };
         lst.parallelStream().forEach(
-                x ->{ CompletableFuture f = CompletableFuture.supplyAsync(()->parseCSV1.apply(x)
-                    /*{
-                    try {
-                        if(x.isEmpty()) Thread.sleep(10000);
-                        else Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("--x--"+x);
-                    System.out.println("--i--"+i);
-
-                    addfilecontent(x);
-                    i.getAndSet(i.get() + 1);
-                    if(x.length()>=1)
-                        return true;
-                    else return false;
-                }*/,executorService);
+                x ->{ CompletableFuture f = CompletableFuture.supplyAsync(()->parseCSV1.apply(x),executorService);
 //                    .thenApply((y) -> parseCSV)
 //                    .thenApply(z ->insertCsvToDB);
                     futureList.add(f);
@@ -138,6 +141,16 @@ public class AysnHandleCSV {
 //            return null;
 //        }
 //    }
+    class RunnableImpl implements Runnable{
+    String name = "";
+    public  RunnableImpl(String name){
+        this.name = name;
+    };
+    @Override
+    public void run() {
+
+    }
+}
 
 
 }
