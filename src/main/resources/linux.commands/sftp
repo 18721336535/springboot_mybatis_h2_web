@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "start to execute shell script,params:$1,$2,$3,$4,$5"
+usertId=$1
+targetHost=$2
+sourceDir=$3
+targetDir=$4
+fileName=$5
+cd ${sourceDir}
+touch "${fileName}"
+sftp -o StrictHostKeyChecking=no ${userId}@${targetHost} <<EOF
+cd ${targetDir}
+lcd ${sourceDir}
+put ${fileName}
+quit
+EOF
+echo "sftp quit, execute shell successfully."
