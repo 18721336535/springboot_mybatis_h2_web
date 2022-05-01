@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zbq.mapper.UserMapper">
+    <select id="queryUserList" resultType="user">
+        select * from user
+    </select>
+    <!-- 定义封装account和user的resultMap -->
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="userSex" column="sex"></result>
+    </resultMap>
+    <select id="queryUsers" parameterType="user" resultMap="userMap">
+        select id,username,sex from user order by id limit #{pageSize} offset #{offset}
+    </select>
+</mapper>

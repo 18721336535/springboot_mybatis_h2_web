@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动菜单</title>
+    <style type="text/css">
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    select {
+        width: 150px;
+    }
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+    //生命一个xml变量，用于存储ajax请求返回的xml信息
+    var xmlDom = null;
+
+    $(function() {
+        showProvince();
+    });
+
+    function showProvince() {
+        //ajax去服务器把信息请求回来
+        //从中筛选省份信息并显示
+        $.get('./ChinaArea.xml', function(msg) {
+            xmlDom = msg;
+            //对服务器返回的xml信息处理
+            //需要从最大的XMLDocument结点获得province结点
+            //province是XMLDocunment的子节点
+            $(msg).find('province').each(function(k, v) {
+                //this代表每个province的dom对象
+                //获得省份的名称并显示给下拉列表
+                var nm = $(this).attr('province');
+                var id = $(this).attr('provinceID');
+                //给select追加option
+                $('#province').append('<option value="' + id + '">' + nm + '</option>');
+            });
+        }, 'xml');
+    }
+
+    //根据选择的省份选择显示城市
+    function showCity() {
+        //获取选取的省份的id信息
+        var twoPid = $('#province option:selected').val().substr(0, 2);
+        //清除旧的结点
+        $('#city').empty();
+        $('#area').empty();
+        //获得选取省份下的城市信息
+        //限制条件，City标签，本身id前两位和省份id一致
+        //遍历City信息并显示到页面上
+        $(xmlDom).find('City[CityID^=' + twoPid + ']').each(function() {
+            var name = $(this).attr('City');
+            var id = $(this).attr('CityID');
+            $('#city').append('<option value="' + id + '">' + name + '</option>'); //追加
+        });
+
+    }
+    //显示区县的方法和上面的类似
+    function showArea() {
+
+        var fourPid = $('#city option:selected').val().substr(0, 4);
+
+        $('#area').empty();
+
+        $(xmlDom).find('Piecearea[PieceareaID^=' + fourPid + ']').each(function() {
+            var name = $(this).attr('Piecearea');
+            var id = $(this).attr('PieceareaID');
+
+            $('#area').append('<option value="' + id + '">' + name + '</option>');
+        });
+    }
+    </script>
+</head>
+
+<body>
+<h2>地区显示的三级联动菜单</h2>
+<div>
+    <form>
+        省份：
+        <select name="province" id="province" onchange="showCity()">
+            <option value="0">--请选择--</option>
+        </select>&nbsp;&nbsp; 城市：
+        <select name="city" id="city" onchange="showArea()">
+            <option value="0">--请选择--</option>
+        </select>&nbsp;&nbsp; 地区：
+        <select name="area" id="area">
+            <option value="0">--请选择--</option>
+        </select>
+    </form>
+</div>
+</body>
+
+</html>

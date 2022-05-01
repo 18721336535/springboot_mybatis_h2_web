@@ -70,7 +70,7 @@ public class ParseRunnable implements Runnable {
                 Thread.currentThread().interrupt();
             }
         });
-        if(!allResult.get()) {
+            if(!allResult.get()) {
             //get error file and zipIt then send email to user
             new File("iem/error/Error.zip");
             //ZipUtility.zipIt();
