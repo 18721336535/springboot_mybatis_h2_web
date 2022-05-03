@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zb.mapper.CarModelInfoMapper">
+  <resultMap id="BaseResultMap" type="zb.model.CarModelInfo">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="series" jdbcType="VARCHAR" property="series" />
+    <result column="engine" jdbcType="VARCHAR" property="engine" />
+    <result column="displacement" jdbcType="VARCHAR" property="displacement" />
+    <result column="transmission" jdbcType="VARCHAR" property="transmission" />
+    <result column="pyear" jdbcType="VARCHAR" property="pyear" />
+    <result column="sell_name" jdbcType="VARCHAR" property="sellName" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="zb.model.CarModelInfo">
+    insert into car_model_info (id, brand, series, 
+      engine, displacement, transmission, 
+      pyear, sell_name, create_by, 
+      create_time, update_by, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{brand,jdbcType=VARCHAR}, #{series,jdbcType=VARCHAR}, 
+      #{engine,jdbcType=VARCHAR}, #{displacement,jdbcType=VARCHAR}, #{transmission,jdbcType=VARCHAR}, 
+      #{pyear,jdbcType=VARCHAR}, #{sellName,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="zb.model.CarModelInfo">
+    insert into car_model_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="brand != null">
+        brand,
+      </if>
+      <if test="series != null">
+        series,
+      </if>
+      <if test="engine != null">
+        engine,
+      </if>
+      <if test="displacement != null">
+        displacement,
+      </if>
+      <if test="transmission != null">
+        transmission,
+      </if>
+      <if test="pyear != null">
+        pyear,
+      </if>
+      <if test="sellName != null">
+        sell_name,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="brand != null">
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="series != null">
+        #{series,jdbcType=VARCHAR},
+      </if>
+      <if test="engine != null">
+        #{engine,jdbcType=VARCHAR},
+      </if>
+      <if test="displacement != null">
+        #{displacement,jdbcType=VARCHAR},
+      </if>
+      <if test="transmission != null">
+        #{transmission,jdbcType=VARCHAR},
+      </if>
+      <if test="pyear != null">
+        #{pyear,jdbcType=VARCHAR},
+      </if>
+      <if test="sellName != null">
+        #{sellName,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

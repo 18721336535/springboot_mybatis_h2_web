@@ -9,8 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>testDemo</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>doc_module</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mybatis_generator</module>
+    </modules>
     <dependencies>
     <dependency>
         <groupId>junit</groupId>

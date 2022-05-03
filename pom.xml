@@ -20,7 +20,8 @@
 
 	<modules>
         <module>job_module</module>
-		<module>testDemo</module>
+		<module>doc_demo</module>
+		<module>test</module>
     </modules>
 
 	<dependencyManagement>

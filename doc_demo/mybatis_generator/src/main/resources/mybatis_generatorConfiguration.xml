@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!--数据库驱动-->
+<context id="mysqlContext" targetRuntime="MyBatis3">
+    <commentGenerator>
+        <property name="suppressDate" value="true"/>
+        <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+    <!--数据库链接地址账号密码-->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/zbqdb?serverTimezone=UTC" userId="root" password="123456">
+    </jdbcConnection>
+    <javaTypeResolver>
+        <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+    <!--生成Model类存放位置-->
+    <javaModelGenerator targetPackage="zb.model" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+        <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+    <!--生成xml映射文件存放位置-->
+    <sqlMapGenerator targetPackage="zb.mapper" targetProject="src/main/resources">
+        <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+    <!--生成mapper类存放位置-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="zb.mapper" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+    <!--生成对应表及类名-->
+    <table tableName="car_model_info" domainObjectName="CarModelInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+</context>
+</generatorConfiguration>
+
+<!--<generatorConfiguration>-->
+<!--    <context id="context" targetRuntime="MyBatis3">-->
+<!--        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>-->
+<!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>-->
+<!--&lt;!&ndash;    <context id="default" targetRuntime="MyBatis3" defaultModelType="flat">&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="beginningDelimiter" value="`"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="endingDelimiter" value="`"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="javaFileEncoding" value="UTF-8"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 为模型生成序列化方法&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 为生成的Java模型创建一个toString方法 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>&ndash;&gt;-->
+
+<!--        <commentGenerator>-->
+<!--            <property name="suppressAllComments" value="true"/>-->
+<!--            <property name="suppressDate" value="true"/>-->
+<!--        </commentGenerator>-->
+<!--        &lt;!&ndash; !!!! Database Configurations !!!! &ndash;&gt;-->
+<!--        <jdbcConnection driverClass="org.h2.Driver"-->
+<!--                        connectionURL="jdbc:h2:mem:~/dbtest;MODE=MYSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE"-->
+<!--                        userId="sa"-->
+<!--                        password="sa">-->
+<!--            <property name="nullCatalogMeansCurrent" value="true"/>-->
+<!--        </jdbcConnection>-->
+<!--        <javaTypeResolver>-->
+<!--            <property name="forceBigDecimals" value="false" />-->
+<!--        </javaTypeResolver>-->
+
+<!--        <javaModelGenerator targetPackage="com.zbq.model" targetProject="C:/Users/zbq/Desktop/gitTest/Springboot_H2_web_repository_1/springboot_mybatis_h2_web/job_module/src/main/java"/>-->
+
+<!--        <sqlMapGenerator targetPackage="com.zbq.mp" targetProject="C:/Users/zbq/Desktop/gitTest/Springboot_H2_web_repository_1/springboot_mybatis_h2_web/job_module/src/main/resources"/>-->
+
+<!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zbq.mp" targetProject="C:/Users/zbq/Desktop/gitTest/Springboot_H2_web_repository_1/springboot_mybatis_h2_web/job_module/src/main/java"/>-->
+<!--        &lt;!&ndash; !!!! Table Configurations !!!! &ndash;&gt;-->
+<!--        <table tableName="USER_ROLE" domainObjectName="UserRole" ></table>-->
+<!--&lt;!&ndash;        <table tableName="USER_ROLE" enableCountByExample="false"&ndash;&gt;-->
+<!--&lt;!&ndash;        enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>&ndash;&gt;-->
+<!--&lt;!&ndash;        <table tableName="USER"/>&ndash;&gt;-->
+<!--    </context>-->
+<!--</generatorConfiguration>-->
