@@ -21,7 +21,7 @@
 	<modules>
         <module>job_module</module>
 		<module>doc_demo</module>
-		<module>test</module>
+		<module>doc_demo/mybatis_generator</module>
     </modules>
 
 	<dependencyManagement>

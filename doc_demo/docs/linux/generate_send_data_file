@@ -1,0 +1,49 @@
+#!/bin/bash
+function handleExportedData() {
+    table_name=$1
+    runDate = $2
+    cmdFile=$3
+
+    excutionTime=`date "+%Y%m%d%H%M%S"`
+
+    if["${table_name}.dat" = "USER.dat"];then
+      cut -f 1-4 -d "|" ${table_name}.dat > user_tmp.dat
+    fi
+    if["${table_name}.dat" = "USER_ROLR.dat"];then
+      sed -e 's/ *| */|/g' -e 's/^ *//g' ${table_name}.dat > user_role_tmp.dat
+      cut -f 1-4 -d "|" user_role_tmp.dat > user_role_tmp1.dat
+      mv user_role_tmp1.dat ${table_name}.dat.${runDate}
+    fi
+
+    file=${table_name}_tmp.dat
+    if[ -f "$file"];then
+      echo "put $file" >> $cmdFile
+      cp $file ${table_name}_${runDate}.dat.{excutionTime}
+      echo "done $table_name at:$excutionTime"
+    fi
+
+}
+
+echo "check poit 1: read param file"
+touch "batch_cmd.sh"
+batchSendCmdFile=batch_cmd.sh
+while read line
+do
+    table_name=`echo $line | cut -d' ' -f1`
+    echo "handle table $table_name"
+    handleExportedData $table_name $runDate $batchSendCmdFile
+done
+
+echo "cd ${targetDir}" >> $batchSendCmdFile
+echo "put send_file_${runDate}.end" >> $batchSendCmdFile
+cat $batchSendCmdFile >> ${batchSendCmdFile}.${runDate}
+/bin/sftp -b $batchSendCmdFile ${uid}@${hostname} >>$logFile
+exitVal=$?
+if [ "$exitVal" -ne "0"];then
+  echo "send files fail"
+  exit -1
+else
+  echo "send files send successfully end at :`date "+%Y-%m-%d %H:%M:%S"`"
+  rm $batchSendCmdFile
+  exit 0
+fi
