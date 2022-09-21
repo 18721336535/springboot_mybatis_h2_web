@@ -34,7 +34,7 @@ public class ASYNCSVParser {
             groups.add(marginGroup);
             groups.add(crfGroup);
             paramDto.setFileGroups(groups);
-            executors.submit(new ParseRunnable(paramDto));
+            executors.execute(new ParseRunnable(paramDto));
        }finally {
             executors.shutdown();
        }

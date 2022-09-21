@@ -30,6 +30,7 @@ public class ParseRunnable implements Runnable {
             r ->{
                 Thread t = new Thread(r);
                 t.setName("matrixReleaseThread"+number.getAndAdd(1));
+                t.setDaemon(true);
                 return t;
             },
             (r,exeCuter) ->{
@@ -72,6 +73,7 @@ public class ParseRunnable implements Runnable {
         });
             if(!allResult.get()) {
             //get error file and zipIt then send email to user
+
             new File("iem/error/Error.zip");
             //ZipUtility.zipIt();
         }

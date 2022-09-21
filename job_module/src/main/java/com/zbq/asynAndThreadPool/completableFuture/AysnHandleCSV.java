@@ -19,15 +19,20 @@ public class AysnHandleCSV {
         int poolSize=1;
         int m = 1;
         AtomicInteger i = new AtomicInteger();
-        ExecutorService executorService = new ThreadPoolExecutor(poolSize, 2, 30, TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(m), r -> {
+        ExecutorService executorService = new ThreadPoolExecutor(
+                poolSize,
+                2,
+                30,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(m),
+                r -> {
                     Thread t = new Thread( r);
                     int g = i.getAndAdd(1);
                     t.setName("MatrixReleseThreadName"+g);
-                    t.setDaemon(true);
+                    t.setDaemon(true);//设置守护线程：主线程退出，销毁线程池。
                     return t;
-                }
-                ,  new ThreadPoolExecutor.AbortPolicy()/*(r, executor) ->{
+                },
+                new ThreadPoolExecutor.AbortPolicy()/*(r, executor) ->{
             System.out.println(r.toString()+"is rejected! in "+Thread.currentThread().getName());
             try {
 //                Thread.sleep(0);
