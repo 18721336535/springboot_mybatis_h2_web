@@ -14,9 +14,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 public class HttpUtils {
 
     private PoolingHttpClientConnectionManager cm;
