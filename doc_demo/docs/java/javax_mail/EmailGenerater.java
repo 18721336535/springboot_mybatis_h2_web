@@ -8,6 +8,38 @@ import java.util.Properties;
 
 public class EmailGenerater {
     public static void main(String[] args){
+        //create session for send email
+        Session session = getSession();
+        try {
+            MimeMessage msg = new MimeMessage(session);
+            msg.addFrom(new Address[]{new InternetAddress("----w15719290065@126.com")});
+            msg.setRecipients(Message.RecipientType.TO, "1186014040@qq.com");
+            msg.setSubject("JavaMail hello world example");
+            msg.setSentDate(new Date());
+            msg.setText("Hello, world!\n");
+            //create email body
+            msg=new EmailGenerater().createEmailBody(msg);
+            //generate excel attachments
+            msg=new EmailGenerater().createEmailAttachment(msg);
+            Transport.send(msg);
+        } catch (MessagingException mex) {
+            System.out.println("send failed, exception: " + mex);
+        }
+    }
+
+    private MimeMessage createEmailBody(MimeMessage msg){
+        return msg;
+
+    }
+
+    private MimeMessage createEmailAttachment(MimeMessage msg){
+        return msg;
+
+    }
+
+
+
+    private static Session getSession() {
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.126.com");
         props.put("mail.smtp.port", 25);
@@ -16,22 +48,10 @@ public class EmailGenerater {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication("----w15719290065@126.com", "JTRNDUKEVKRUQNSH");
+                //        return new PasswordAuthentication("zenbinqin135@163.com","20092014zbq");
+                return new PasswordAuthentication("----w15719290065@126.com", "JTRNDUKEVKRUQNSH");
             }
         });
-
-//        return new PasswordAuthentication("zenbinqin135@163.com","20092014zbq");
-
-        try {
-            MimeMessage msg = new MimeMessage(session);
-            msg.addFrom(new Address[]{new InternetAddress("----w15719290065@126.com")});
-            msg.setRecipients(Message.RecipientType.TO, "1186014040@qq.com");
-            msg.setSubject("JavaMail hello world example");
-            msg.setSentDate(new Date());
-            msg.setText("Hello, world!\n");
-            Transport.send(msg);
-        } catch (MessagingException mex) {
-            System.out.println("send failed, exception: " + mex);
-        }
+        return session;
     }
 }
