@@ -1,0 +1,7 @@
+generator mapper.xml file steps:
+1.start up db server
+2.create mybatis generate plugin
+3.creat config file and related class
+mybatis_generator\src\main\resources\mybatis_generatorConfiguration.xml
+4.click or execute mybatis-generator-maven-plugin
+5.get the result
