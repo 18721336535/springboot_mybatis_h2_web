@@ -1,5 +1,5 @@
 generator mapper.xml file steps:
-1.start up db server
+1.start up db server(task manager)
 2.create mybatis generate plugin
 3.creat config file and related class
 mybatis_generator\src\main\resources\mybatis_generatorConfiguration.xml
