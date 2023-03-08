@@ -1,0 +1,21 @@
+生成根证书的私钥
+openssl genrsa -out myca.key 2048
+生成根证书请求,
+openssl req -new -key myca.key -out myca.csr
+自签名得到根证书
+openssl x509 -req -days 365 -in myca.csr -signkey myca.key -out myca.crt
+生成服务器端的私钥
+openssl genrsa -out myserverkey.key 2048
+生成服务器端证书的请求文件，需请求根证书来签发
+openssl req -new -key myserverkey.key -out myservercrt.csr
+用根证书来签发服务器端请求文件，生成服务器端证书
+openssl x509 -req -in myservercrt.csr -CA myca.crt -CAkey myca.key -CAcreateserial -days 3650 -out myservercrt.crt
+
+打包服务器端资料为pkcs12格式(server.pkcs12 )
+openssl pkcs12 -export -in myservercrt.crt -inkey myserverkey.key -out myserver.pkcs12
+
+#祛除证书密码保护
+openssl rsa -in myca.key -out server.key.insecure
+
+
+
