@@ -21,7 +21,7 @@ private static final Logger logger = LoggerFactory.getLogger(JobTest.class);
     private UserMapper userMapper;
     @Scheduled(cron = "*/15 * * * * ?")
     public void execute() throws InterruptedException {
-        logger.info("execute-listadd");
+//        logger.info("execute-listadd");
 //        List<User> users= userMapper.queryUserList();
 //        logger.info("execute-users{}",users.size());
 //
@@ -35,7 +35,7 @@ private static final Logger logger = LoggerFactory.getLogger(JobTest.class);
 
     @Scheduled(cron = "*/40 * * * * ?")
     public void execute1() throws InterruptedException {
-        logger.info("execute1-users uery");
+//        logger.info("execute1-users uery");
 //        List<String> bzlist = new ArrayList<String>();
 //        List<User> users= userMapper.queryUserList();
 //        logger.info("thread id:{},FixedPrintTask execute times:"+Thread.currentThread().getId());

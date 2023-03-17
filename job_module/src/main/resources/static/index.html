@@ -7,16 +7,16 @@
     <meta http-equiv="expires" content="0">
 
 
-
     <title>login</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 <ul id="myTabs" class="nav nav-tabs">
-    <li class="active"><a href="#home" data-toggle="tab">菜鸟教程</a></li>
+    <li class="active"><a href="#home" data-toggle="tab">教程</a></li>
+
     <li><a href="#ios" data-toggle="tab">iOS</a></li>
     <li><a href="#ad" data-toggle="tab">android</a></li>
     <li><a href="#wp" data-toggle="tab">wephone</a></li>
@@ -35,7 +35,7 @@
     <div class="tab-pane fade" id="ios">
 <!--        <iframe style="width:1000px;height:500px;" id = "if1">-->
         <p>iOS 是一个由动版本</p>
-<!--        <a href="Login.html">dgd</a>-->
+<!--        <a href="login.html">dgd</a>-->
         <form di="f1" method="post" >
             <input name="name" value="123"/>
             <input type="password" name="password" value="123"/>
@@ -46,6 +46,7 @@
 </div>
 <script>
     $(function () {
+        $('#home').load('user.html');
         $('#myTabs li:eq(1) a').tab('show');
         $('#stb').click(
                 function(){
