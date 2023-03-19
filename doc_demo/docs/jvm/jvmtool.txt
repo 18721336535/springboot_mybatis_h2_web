@@ -1,0 +1,26 @@
+jps
+jmap -histo 12960
+jmap -heap pid
+jmap -dump:format=b,file=myspboot.hprof 12960
+
+dump thread
+jstack pid
+
+诊断高cpu的issue，如何找到高诊断cpu的线程代码：
+jps
+top -p pid 显示java进程内存使用
+再按H, 显示所有线程内存使用
+找到高cpu对应的线程号 并转16进制 得到 16进制的线程号
+jstack pid|grep -A 20 16进制的线程号
+
+查看进程（jvm）start参数，
+jinfo -flags pid
+
+查看系统参数
+jinfo -sysprops pid
+
+jvm调优最常用
+jstat -gc pid
+jstat -gc 12960
+ S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU    CCSC   CCSU   YGC     YGCT    FGC    FGCT    CGC    CGCT     GCT
+13312.0 12800.0  0.0   7779.5 64000.0   6768.0   32768.0    22395.5   52992.0 50509.9 7168.0 6720.6     29    0.087   4      0.246   -          -    0.332
