@@ -1,7 +1,0 @@
-start executionTime:1679322718
-
-file fileName:a_1.csv.gz
-file count:3
-diff line:2
-diff line:1
-send executionTime:1679322719

@@ -131,7 +131,7 @@ do
 
     #check if line sum match trailer number
     sumMatchCheck $fileName
-
+fi
 done
 
 endTime=`date "+%Y%m%d%H%M"`
