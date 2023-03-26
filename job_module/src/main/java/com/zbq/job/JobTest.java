@@ -17,28 +17,33 @@ public class JobTest {
 private static final Logger logger = LoggerFactory.getLogger(JobTest.class);
 //    private static Logger logger = LogManager.getLogger(JobTest.class);
     private int i;
+    static  List<Object> bzlist1 = new ArrayList<>();
+
     @Autowired
     private UserMapper userMapper;
     @Scheduled(cron = "*/15 * * * * ?")
     public void execute() throws InterruptedException {
-//        logger.info("execute-listadd");
-//        List<User> users= userMapper.queryUserList();
-//        logger.info("execute-users{}",users.size());
-//
+        logger.info("execute-listadd");
+        List<User> users= userMapper.queryUserList();
+        logger.info("execute-users{}",users.size());
+        long i =0;
+        /*oom test  for mat analyze*/
 //        List<String> bzlist = new ArrayList<String>();
 //        while(true) {
-//            Thread.sleep(10);
-//            bzlist.add("oomTest");
+//            Thread.sleep(1);
+//            Object str=new Object();
+//            bzlist1.add(str);
+//            bzlist.add("oomTest" + i++);
 //        }
     }
 
 
-    @Scheduled(cron = "*/40 * * * * ?")
+    @Scheduled(cron = "*/10 * * * * ?")
     public void execute1() throws InterruptedException {
-//        logger.info("execute1-users uery");
-//        List<String> bzlist = new ArrayList<String>();
+        logger.info("execute1-users uery");
+        List<String> bzlist = new ArrayList<String>();
 //        List<User> users= userMapper.queryUserList();
-//        logger.info("thread id:{},FixedPrintTask execute times:"+Thread.currentThread().getId());
+        logger.info("thread id:{},FixedPrintTask execute times:"+Thread.currentThread().getId());
     }
 
 }

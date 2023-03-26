@@ -33,6 +33,17 @@ var vue = new Vue({
                 _this.findAll();
             }).catch(function (err) {
             });
+        },
+
+        getAnalyzeData:function (){
+             $('#content-section').load('analyze_content_section.html');
+//             $('#content-wrapper-body').load('login.html');
+        },
+
+        getCompareData:function (){
+            console.log("-------------section loading-------");
+            $('#content-section').load('compare_content_section.html');
+             console.log("-------------section loeaded-------");
         }
 
     },

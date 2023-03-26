@@ -9,15 +9,61 @@ import java.util.Objects;
 public class User {
 
     private Long id;
-    private String userName;
+    private String username;
     private String userIdNo;
-    private String userSex;
-    private int userAge;
+    private String password;
+    private Integer age;
+    private String sex;
     private String phoneNum;
     private String homeTownAddress;
     private String email;
     private int pageSize = 3;
     private int offset =0;
+
+    public User(long id, String username,String userIdNo,String password, int age, String sex, String phoneNum,String email){
+        this.id=id;
+        this.username=username;
+        this.userIdNo=userIdNo;
+        this.password=password;
+        this.age=age;
+        this.sex=sex;
+        this.phoneNum=phoneNum;
+        this.email=email;
+    }
+
+    public User(){}
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     public int getPageSize() {
         return pageSize;
@@ -43,36 +89,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getUserIdNo() {
         return userIdNo;
     }
 
     public void setUserIdNo(String userIdNo) {
         this.userIdNo = userIdNo;
-    }
-
-    public String getUserSex() {
-        return userSex;
-    }
-
-    public void setUserSex(String userSex) {
-        this.userSex = userSex;
-    }
-
-    public int getUserAge() {
-        return userAge;
-    }
-
-    public void setUserAge(int userAge) {
-        this.userAge = userAge;
     }
 
     public String getPhoneNum() {
@@ -108,10 +130,20 @@ public class User {
     @Override
     public boolean equals(Object obj){
         User other = (User)obj;
-        boolean a =  Objects.equals(userName,other.userName);
+        boolean a =  Objects.equals(username,other.username);
         boolean b= Objects.equals(userIdNo,other.userIdNo);
         return a && b;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
