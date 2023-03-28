@@ -1,5 +1,7 @@
 package com.zbq.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,10 +17,19 @@ public class FileDto {
     private String lastUpdateTime;
     private String status;
     private String owner;
+    private List<String> columns;
     private int pageSize = 3;
     private int offset =0;
 
-    public FileDto(String id, String fileName, String filePath, String fileSize, String lastUpdateTime, String status, String owner) {
+    public List<String> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<String> columns) {
+        this.columns = columns;
+    }
+
+    public FileDto(String id, String fileName, String filePath, String fileSize, String lastUpdateTime, String status, String owner, List<String> columns) {
         this.id = id;
         this.fileName = fileName;
         this.filePath = filePath;
@@ -26,6 +37,7 @@ public class FileDto {
         this.lastUpdateTime = lastUpdateTime;
         this.status = status;
         this.owner = owner;
+        this.columns = columns;
     }
 
     public String getId() {

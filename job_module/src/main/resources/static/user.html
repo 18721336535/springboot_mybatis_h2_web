@@ -67,7 +67,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>ToolKit</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>My_Tools</b>Management</span>
+            <span class="logo-lg"><b>MyTools</b>Management</span>
         </a>
 
 
@@ -299,7 +299,7 @@
                                 <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Andy - 数据管理员
+                                    Andy - Data Management员
                                     <small>最后登录 11:20AM</small>
                                 </p>
                             </li>
@@ -351,9 +351,9 @@
 
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
-                <li class="header">菜单</li>
+                <li class="header">Menu</li>
 
-                <li id="admin-index"><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> <span>首页</span></a>
+                <li id="admin-index"><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> <span>First Page</span></a>
                 </li>
 
                 <!-- 菜单 -->
@@ -361,7 +361,7 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-folder"></i> <span>数据管理</span>
+                        <i class="fa fa-folder"></i> <span>Data Management</span>
                         <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -370,8 +370,8 @@
 
                         <li id="admin-data-analyze">
 <!--                            <a href="all-admin-login.html">-->
-                            <a href="#" onclick="getAnalyzeData()"><i class="fa fa-circle-o" id="get-data-analyze-result"></i> 数据质量分析</a></li>
-                        <li id="admin-data-comparison"><a href="#" onclick="getCompareData()"><i class="fa fa-circle-o" id="get-data-compare-result"></i> 文件数据比对</a></li>
+                            <a href="#" onclick="getAnalyzeData()"><i class="fa fa-circle-o" id="get-data-analyze-result"></i> Data Quality Analyze</a></li>
+                        <li id="admin-data-comparison"><a href="#" onclick="getCompareData()"><i class="fa fa-circle-o" id="get-data-compare-result"></i> Data Comparison</a></li>
                     </ul>
                 </li>
                 <!-- 菜单 /-->
@@ -390,13 +390,13 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                数据管理
-                <small>数据列表</small>
+                Data Management
+                <small>Data List</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li><a href="#">数据管理</a></li>
-                <li class="active">数据列表</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> First Page</a></li>
+                <li><a href="#">Data Management</a></li>
+                <li class="active">Data List</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
@@ -408,7 +408,7 @@
             <!-- .box-body -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">&nbsp;数据输入:</h3>
+                    <h3 class="box-title">&nbsp;input:</h3>
                 </div>
                 <div class="box-header with-border">
                     <div class="form-group form-inline">
@@ -424,7 +424,7 @@
 <!--                <div class="pull-left">-->
                 <div class="">
                     <div class="box-header with-border">
-                        <h3 class="box-title">&nbsp;数据输出:</h3>
+                        <h3 class="box-title">&nbsp;output:</h3>
                     </div>
                 </div>
                 <div class="box-body">
@@ -445,25 +445,27 @@
                         </div>
                         <div class="box-tools pull-right">
                             <div class="has-feedback">
-                                <input type="text" class="form-control input-sm" placeholder="搜索">
+                                <input type="text" class="form-control input-sm" placeholder="search">
                                 <span class="glyphicon glyphicon-search form-control-feedback"></span>
                             </div>
                         </div>
                         <!--工具栏/-->
 
-                        <!--数据列表-->
+                        <!--Data List-->
                         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
                             <thead>
                             <tr>
                                 <th class="" style="padding-right:0px;">
                                     <input id="selall" type="checkbox" class="icheckbox_square-blue">
                                 </th>
-                                <th class="sorting_asc">ID</th>
-                                <th class="sorting_desc">FileName</th>
-                                <th class="sorting_asc sorting_asc_disabled">FilePath</th>
-                                <th class="sorting_desc sorting_desc_disabled">FileSize</th>
-                                <th class="sorting">LastUpdateTime</th>
-                                <th class="text-center sorting">Operation</th>
+                                <th class="text-center sorting_asc">ID</th>
+                                <th class="text-center sorting_desc">FileName</th>
+                                <th class="text-center sorting_asc_disabled">FilePath</th>
+                                <th class="text-center sorting_desc_disabled">FileSize</th>
+                                <th class="text-center sorting">LastUpdateTime</th>
+                                <th class="text-center">Custom params</th>
+                                <th class="text-center">Operation</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">AnalyzeResult</th>
                             </tr>
                             </thead>
@@ -476,8 +478,10 @@
                                 <td>{{file.filePath}}</td>
                                 <td>{{file.fileSize}}</td>
                                 <td>{{file.lastUpdateTime}}</td>
-                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">Analyze</button></td>
-                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">AnalyzeDetail</button></td>
+                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">edit</button></td>
+                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">execute</button></td>
+                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">complete</button></td>
+                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">detail</button></td>
                             </tr>
 
                             </tbody>
@@ -496,12 +500,12 @@
 
                                                 <div class="box-body">
                                                     <div class="form-horizontal">
-                                                        <div class="form-group">
-                                                            <ul>
-                                                                <li>Coffee</li>
-                                                                <li>Tea</li>
-                                                                <li>Milk</li>
-                                                            </ul>
+                                                        <div class="form-group" id="file-column-input-checkbox">
+<!--                                                            <ul>-->
+<!--                                                                <li>Coffee</li>-->
+<!--                                                                <li>Tea</li>-->
+<!--                                                                <li>Milk</li>-->
+<!--                                                            </ul>-->
 <!--                                                            <textarea class="col-sm-5 control-label" rows="10" cols="30">-->
 <!--                                                                -->
 <!--                                                            </textarea>-->
@@ -522,7 +526,7 @@
                             </div>
                             <!--模态窗口/-->
                         </table>
-                        <!--数据列表/-->
+                        <!--Data List/-->
 
                         <!--工具栏-->
                         <div class="pull-left">
@@ -575,7 +579,7 @@
                     <div class="box-tools pull-right">
                         <ul class="pagination">
                             <li>
-                                <a href="#" aria-label="Previous">首页</a>
+                                <a href="#" aria-label="Previous">First Page</a>
                             </li>
                             <li><a href="#">上一页</a></li>
                             <li><a href="#">1</a></li>

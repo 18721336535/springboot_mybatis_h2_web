@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,11 +24,13 @@ public class FileDtoController {
     @RequestMapping("/findAll")
     public List<FileDto> findAll(){
         System.out.println("test");
-        return Arrays.asList(new FileDto("1","File1","/home/","1024M","20230325","Analyzed","Andy1"),
-                new FileDto("2","File2","/home/","100M","20230325","Analyzed","Andy1"),
-                new FileDto("3","File3","/home/","100M","20230325","Analyzed","Andy1"),
-                new FileDto("4","File4","/home/","100M","20230325","To Analyze","Andy1"),
-                new FileDto("5","File5","/home/","300M","20230325","To Analyze","Andy1")
+        List<String> columns = new ArrayList<>(Arrays.asList("pl_1","pl_2","pl_3","pl_4","pl_5","pl_11","pl_21","pl_31","pl_41","pl_51",
+                "pl_01","pl_02","pl_03","pl_04","pl_05","pl_101","pl_201","pl_301","pl_401","pl_501"));
+        return Arrays.asList(new FileDto("1","sft_trade_summary","/home/bz123/","1024M","20230325","Analyzed","Andy1",columns),
+                new FileDto("2","otc_trade_summary","/home/bz123/","100M","20230325","Analyzed","Andy1",columns),
+                new FileDto("3","futures_trade_summary","/home/bz123/","100M","20230325","Analyzed","Andy1",columns),
+                new FileDto("4","equity_trade_summary","/home/bz123/","100M","20230325","To Analyze","Andy1",columns),
+                new FileDto("5","cpm_trade_summary","/home/bz123/","300M","20230325","To Analyze","Andy1",columns)
         );
     }
 
@@ -38,7 +41,9 @@ public class FileDtoController {
      */
     @RequestMapping("/findById")
     public FileDto findById(Integer id){
-        return new FileDto("1","zb","","","","","");
+        List<String> columns = new ArrayList<>(Arrays.asList("pl_1","pl_2","pl_3","pl_4","pl_5","pl_11","pl_21","pl_31","pl_41","pl_51",
+                "pl_01","pl_02","pl_03","pl_04","pl_05","pl_101","pl_201","pl_301","pl_401","pl_501"));
+        return new FileDto("1","zb","","","","","",columns);
     }
 
     /**

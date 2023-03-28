@@ -21,7 +21,7 @@ private static final Logger logger = LoggerFactory.getLogger(JobTest.class);
 
     @Autowired
     private UserMapper userMapper;
-    @Scheduled(cron = "*/15 * * * * ?")
+    @Scheduled(cron = "*/55 * * * * ?")
     public void execute() throws InterruptedException {
         logger.info("execute-listadd");
         List<User> users= userMapper.queryUserList();
@@ -38,7 +38,7 @@ private static final Logger logger = LoggerFactory.getLogger(JobTest.class);
     }
 
 
-    @Scheduled(cron = "*/10 * * * * ?")
+    @Scheduled(cron = "*/50 * * * * ?")
     public void execute1() throws InterruptedException {
         logger.info("execute1-users uery");
         List<String> bzlist = new ArrayList<String>();
