@@ -452,25 +452,25 @@
                         <!--工具栏/-->
 
                         <!--Data List-->
-                        <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                        <table id="dataList" class="table table-bordered table-striped table-hover dataTable mytablecss">
                             <thead>
-                            <tr>
-                                <th class="" style="padding-right:0px;">
-                                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
-                                </th>
-                                <th class="text-center sorting_asc">ID</th>
-                                <th class="text-center sorting_desc">FileName</th>
-                                <th class="text-center sorting_asc_disabled">FilePath</th>
-                                <th class="text-center sorting_desc_disabled">FileSize</th>
-                                <th class="text-center sorting">LastUpdateTime</th>
-                                <th class="text-center">Custom params</th>
-                                <th class="text-center">Operation</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">AnalyzeResult</th>
-                            </tr>
+                                <tr>
+                                    <th class="" style="padding-right:0px;">
+                                        <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                                    </th>
+                                    <th class="text-center sorting_asc">ID</th>
+                                    <th class="text-center sorting_desc">FileName</th>
+                                    <th class="text-center sorting_asc_disabled">FilePath</th>
+                                    <th class="text-center sorting_desc_disabled">FileSize</th>
+                                    <th class="text-center sorting">LastUpdateTime</th>
+                                    <th class="text-center">Custom params</th>
+                                    <th class="text-center">Operation</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">AnalyzeResult</th>
+                                </tr>
                             </thead>
-                            <tbody>
 
+                            <tbody>
                             <tr v-for="file in fileList">
                                 <td><input name="ids" type="checkbox"></td>
                                 <td>{{file.id}}</td>
@@ -481,38 +481,55 @@
                                 <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">edit</button></td>
                                 <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">execute</button></td>
                                 <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">complete</button></td>
-                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">detail</button></td>
+                                <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">detail=========================================================================================================================================================================================================================</button></td>
                             </tr>
-
                             </tbody>
+
                             <!--模态窗口-->
                             <div class="tab-pane" id="tab-model">
 
                                 <div id="myModal" class="modal modal-primary" role="dialog">
                                     <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
+                                        <div class="modal-content"  id="divdrag">
+                                            <div class="modal-header ">
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span></button>
                                                 <h4 class="modal-title">Detail</h4>
                                             </div>
-                                            <div class="modal-body">
-
-                                                <div class="box-body">
-                                                    <div class="form-horizontal">
-                                                        <div class="form-group" id="file-column-input-checkbox">
-<!--                                                            <ul>-->
-<!--                                                                <li>Coffee</li>-->
-<!--                                                                <li>Tea</li>-->
-<!--                                                                <li>Milk</li>-->
-<!--                                                            </ul>-->
-<!--                                                            <textarea class="col-sm-5 control-label" rows="10" cols="30">-->
-<!--                                                                -->
-<!--                                                            </textarea>-->
-                                                        </div>
-                                                    </div>
+                                            <div class="mydivcss modal-body mydivcss">
+                                                <div class="mydivcss box-body mydivcss">
+                                                    ====================================================================================================================================================
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li>Coffee</li>
+                                                        <li>Tea</li>
+                                                        <li>Milk</li>
+                                                    </ul>
                                                 </div>
-
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-outline" data-dismiss="modal">close</button>
@@ -721,6 +738,69 @@
              console.log("-------------section loeaded-------");
         }
 
+    $(function() {
+     //样式
+     $("#divdrag").css({
+         "top": "0px",
+
+     });
+    $(".modal-lg").css({
+         "top": "10px"
+     });
+
+     var dragging = false;
+     var iX, iY;
+
+     $("#divdrag").mousedown(function(e) {
+         dragging = true;
+         iX = e.clientX - this.offsetLeft;
+         iY = e.clientY - this.offsetTop;
+         this.setCapture && this.setCapture();
+         return false;
+     });
+
+     document.onmousemove = function(e) {
+         if (dragging) {
+             var e = e || window.event;
+             var oX = e.clientX - iX;
+             var oY = e.clientY - iY;
+             $("#divdrag").css({
+                 "left": oX + "px",
+                 "top": oY + "px"
+             });
+             return false;
+         }
+     };
+
+     $(document).mouseup(function(e) {
+         dragging = false;
+         $("#divdrag")[0].releaseCapture();
+         e.cancelBubble = true;
+     })
+
+ })
+
 </script>
+<style>
+.table-box .mytablecss {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.mydivcss {
+    background-color:#f9fafc;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    color:#000;
+}
+</style>
 </body>
 </html>
