@@ -1,5 +1,5 @@
 var vue = new Vue({
-    el: "#app",
+    el: "#toolkit-app",
     data: {
         file: {id:"",fileName:"aaa",filePath:"",fileSize:"",lastUpdateTime:"",status:"",columns:[]},
         fileList: [],
@@ -45,6 +45,19 @@ var vue = new Vue({
             });
 
         },
+        findDataByFiledNameAndValue: function () {
+            var _this = this;
+            var filePath = $("#search-path-id").val();
+            var field_key_value = $("#filed-search-key-value-id").val();
+            let paramsDto = {filePath:filePath,fieldKeyValue:field_key_value}
+            axios.post("/file/findDataByFiledNameAndValue",paramsDto).then(function (response) {
+                  _this.fileList = response.data;
+                  console.log(_this.fileList);
+            }).catch(function (err) {
+                  console.log(err);
+            });
+        },
+
         update: function (file) {
             var _this = this;
             axios.post("/file/update",_this.file).then(function (response) {
@@ -52,7 +65,6 @@ var vue = new Vue({
             }).catch(function (err) {
             });
         }
-
     },
 
     created(){

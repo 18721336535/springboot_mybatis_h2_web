@@ -1,14 +1,10 @@
 #!/bin/sh
 
-checkFileEmpty(){
-
-}
-
-
 str="12.3"
 #endcgae=${str:0:1}
 endcgae="#"
 echo "--$endcgae"
+# shellcheck disable=SC2076
 if [[ $str =~ "." ]]; then
 echo "# end"
 else
@@ -37,6 +33,7 @@ fi
 string="hello,shell,split,test"
 array=(${string//,/ })
 
+# shellcheck disable=SC2068
 for var in ${array[@]}
 do
 if [[ $var != "shell" ]];then

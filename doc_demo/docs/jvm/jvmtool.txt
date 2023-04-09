@@ -24,3 +24,6 @@ jstat -gc pid
 jstat -gc 12960
  S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC     MU    CCSC   CCSU   YGC     YGCT    FGC    FGCT    CGC    CGCT     GCT
 13312.0 12800.0  0.0   7779.5 64000.0   6768.0   32768.0    22395.5   52992.0 50509.9 7168.0 6720.6     29    0.087   4      0.246   -          -    0.332
+
+java命令查看jvm使用的垃圾收集器
+java -XX:+PrintCommandLineFlags -version

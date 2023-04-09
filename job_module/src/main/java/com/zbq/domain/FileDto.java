@@ -17,9 +17,18 @@ public class FileDto {
     private String lastUpdateTime;
     private String status;
     private String owner;
+    private String fieldKeyValue;
     private List<String> columns;
     private int pageSize = 3;
     private int offset =0;
+
+    public String getFieldKeyValue() {
+        return fieldKeyValue;
+    }
+
+    public void setFieldKeyValue(String fieldKeyValue) {
+        this.fieldKeyValue = fieldKeyValue;
+    }
 
     public List<String> getColumns() {
         return columns;
@@ -38,6 +47,8 @@ public class FileDto {
         this.status = status;
         this.owner = owner;
         this.columns = columns;
+    }
+    public FileDto() {
     }
 
     public String getId() {

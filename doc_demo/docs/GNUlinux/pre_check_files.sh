@@ -87,6 +87,7 @@ newColumnNameFeature=$2
 outputFile=./precheck_output.log
 files=$(ls ${filePath})
 executionTime=`date "+%Y%m%d%H%M"`
+startTime_s=`date "+%s"`
 echo "file checking ...;start time:$executionTime" > $outputFile
 echo "file path:$filePath" >> $outputFile
 gzfilePattern=".gz"
@@ -135,6 +136,8 @@ fi
 done
 
 endTime=`date "+%Y%m%d%H%M"`
-takeTime=`expr $endTime - $executionTime`
-echo -e "\nfile checking end, fileCheckedSum=$fileNum, end time=$endTime, take time=$takeTime" >> $outputFile
+endTime_s=`date "+%s"`
+takeTime=`expr $endTime_s - $startTime_s`
+takeTime=`expr $takeTime / 60`
+echo -e "\nfile checking end, fileCheckedSum=$fileNum, end time=$endTime, take_time=$takeTime" >> $outputFile
 echo "file checking finish"

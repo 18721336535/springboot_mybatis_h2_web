@@ -12,10 +12,11 @@ do
   echo -e "\nfile fileName:$fileName" >> $outputFile
    count=`zcat $sourcePath/$fileName | wc -l`
   echo -e "file count:$count" >> $outputFile
-  diffcount=`diff <(zcat $sourcePath/$fileName | sort) <(zcat $destPath/$fileName| sort) -y | grep -c '[<\|>]'`
-  echo  "diff line:$diffcount" >> $outputFile
-  diffcount=`comm -23 <(zcat $sourcePath/$fileName | sort) <(zcat $destPath/$fileName| sort) | wc -l`
-  echo  "diff line:$diffcount" >> $outputFile
+#  diffcount=`diff <(zcat $sourcePath/$fileName | sort) <(zcat $destPath/$fileName| sort) -y | grep -c '[<\|>]'`
+#  echo  "diff line:$diffcount" >> $outputFile
+#  diffcount=`comm -23 <(zcat $sourcePath/$fileName | sort) <(zcat $destPath/$fileName| sort) | wc -l`
+#  echo  "diff line:$diffcount" >> $outputFile
+
 
 done
 executionTime=`date "+%s"`

@@ -57,7 +57,7 @@ public class UserTest {
         List<User> userList = userMapper.queryUsers(userParm);
         for(User user : userList){
             System.out.println("-----每个用户的信息------");
-            System.out.println(user.getUserName());
+//            System.out.println(user.getUserName());
         }
     }
 
@@ -68,13 +68,13 @@ public class UserTest {
     @Test
     public void lstOperationTest(){
         User ua = new User();
-        ua.setUserName("123");
+//        ua.setUserName("123");
         ua.setUserIdNo(null);
         List<User> lista = new ArrayList<>(); lista.add(ua);
         //List<User> lista = Arrays.asList(ua);
 
         User ub = new User();
-        ub.setUserName("1236");
+//        ub.setUserName("1236");
         ub.setUserIdNo("235");
         List<User> listb = new ArrayList<>(); listb.add(ub);
         //List<User> listb = Arrays.asList(ub);
