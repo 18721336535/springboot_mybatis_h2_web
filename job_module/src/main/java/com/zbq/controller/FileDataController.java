@@ -73,4 +73,10 @@ public class FileDataController {
                 new FileDto("56","cpm_trade_summary","/home/bz123/","300M","20230325","To Analyze","Andy1",columns)
         );
     }
+
+    @RequestMapping("/getFileHeads")
+    public List<String> getFileHeads(@RequestBody FileParamsDto fileParamsDto){
+        List<String> columns = new ArrayList<>(Arrays.asList("pl_1|","pl_2|","pl_3"));
+        return columns;
+    }
 }

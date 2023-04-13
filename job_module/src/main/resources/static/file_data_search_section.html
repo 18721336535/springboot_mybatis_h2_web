@@ -29,12 +29,14 @@
                         <option value="file">file</option>
                     </select>
                     <input type="text" class="form-control input-sm data-manage-input-sm" id="search-path-id" style="width:300px" placeholder="filesPath">
+                    <button type="button" class="btn btn-default input-sm" title="preview" @click="getFileHeads()"><i class="fa fa-check"></i> preview</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <label class="btn btn-default input-sm">columnName:value</label>
                     <input type="text" class="form-control input-sm data-manage-input-sm" id="filed-search-key-value-id" style="width:200px" placeholder="Key1:value1,key2:value2">
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="button" class="btn btn-default input-sm" title="preview" @click="findDataByFiledNameAndValue()"><i class="fa fa-check"></i> show</button>
                 </div>
+                <div v-html="div_heads_message"></div>
             </div>
             <div class="">
                 <div class="box-header with-border">
@@ -82,18 +84,18 @@
                         </thead>
 
                         <tbody>
-                        <tr v-for="file in fileList">
-                            <td><input name="ids" type="checkbox"></td>
-                            <td>{{file.id}}</td>
-                            <td>{{file.fileName}}</td>
-                            <td>{{file.filePath}}</td>
-                            <td>{{file.fileSize}}</td>
-                            <td>{{file.lastUpdateTime}}</td>
-                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">edit</button></td>
-                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">execute</button></td>
-                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">complete</button></td>
-                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">detail</button></td>
-                        </tr>
+<!--                        <tr v-for="file in fileList">-->
+<!--                            <td><input name="ids" type="checkbox"></td>-->
+<!--                            <td>{{file.id}}</td>-->
+<!--                            <td>{{file.fileName}}</td>-->
+<!--                            <td>{{file.filePath}}</td>-->
+<!--                            <td>{{file.fileSize}}</td>-->
+<!--                            <td>{{file.lastUpdateTime}}</td>-->
+<!--                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">edit</button></td>-->
+<!--                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">execute</button></td>-->
+<!--                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">complete</button></td>-->
+<!--                            <td class="text-center"><button type="button" class="btn bg-olive btn-xs" @click="findById(file.id)">detail</button></td>-->
+<!--                        </tr>-->
                         </tbody>
                     </table>
                     <!--Data List/-->
