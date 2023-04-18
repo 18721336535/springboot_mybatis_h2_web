@@ -64,7 +64,7 @@ endTime=`date "+%Y%m%d%H%M"`
 endTime_s=`date "+%s"`
 takeTime=`expr $endTime_s - $startTime_s`
 takeTime=`expr $takeTime / 60`
-echo -e "\nfile comparing end, fileCheckedSum=$fileNum, end time=$endTime, take_time=$takeTime" >> $outputFile
+echo -e "\nfile comparing end, end time=$endTime, take_time=$takeTime" >> $outputFile
 echo "file comparing finish"
 
 
