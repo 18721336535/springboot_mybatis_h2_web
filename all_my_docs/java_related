@@ -1,0 +1,58 @@
+Javac/Java&Jar 命令编译运行java程序
+配置PATH变量的目的
+如JDK安装在D:\program\java目录下，则把PATH变量设置成D:\program\java\jdk\bin, 这个路径下有我们要编译、运行Java程序所需要的所有工具。比如javac.exe,java.exe,jar.exe等。分别对应我们在cmd下使用的javac、java、jar等命令。
+Javac命令
+类的发现规则：class文件所在目录 = classpath\包名（包名中的'.'会全变成'\'）。
+classpath代表class文件的存放路径。在编译时用-classpath来设置。
+
+classpath可以设置多个路径，路径之间windows用分号';' unix用冒号’:’相隔。编译时，javac会逐个尝试classpath的每个路径和文件的包名的组合，直到找到相应的class文件为止。但是如果通过classpath与包名的组合在多个不同的路径下都找到了同名类，则会返回错误信息。
+
+javac默认情况下在java文件的当前目录生成class文件，所以人们经常把'.'添加到classpath中，代表当前文件所在的路径。高版本的Java编译以及运行程序会自动把'.'添加到classpath中。
+
+如果java文件中显示的写了package packagename 则为class文件指定了包，那么这个class文件也必须应在packagename转换后的相应子目录下。如果不写，则表示该class文件在默认包中。
+javac -classpath ../lib/xxx.jar:../lib/xxx.jar: zbq/com/Test.java
+导入多个外部jar包时需要用分隔符分割，最后一个后面也有分隔符。
+
+文件结构/主类代码：
+package com.zbq.javactest;
+
+import com.alibaba.fastjson.JSON
+
+public class FileWCTest {
+    public static void main(String args[]) throws IOException {
+        ParamDto param = new ParamDto();
+        param.setFilePath1(args[0]);
+        param.setFilePath2(args[1]);
+        readFileByBuffer(param);
+    }
+    ……
+}
+
+$ javac -classpath /c/Users/zbq/.m2/repository/com/alibaba/fastjson/1.2.73/fastjson-1.2.73.jar:/d/workspace/gitProjects/job_module/src/test/classes /d/workspace/gitProjects/job_module/src/test/java/com/zbq/javactest/paramdto/ParamDto.java -d /d/workspace/gitProjects/job_module/src/test/classes
+$ javac -classpath /c/Users/zbq/.m2/repository/com/alibaba/fastjson/1.2.73/fastjson-1.2.73.jar:/d/workspace/gitProjects/job_module/src/test/classes /d/workspace/gitProjects/job_module/src/test/java/com/zbq/javactest/FileWCTest.java -d /d/workspace/gitProjects/job_module/src/test/classes
+
+Java 命令
+运行指定了package程序时，需要显示地写出其包名，即：java packagename.classname，其遵循与class文件一样的寻找规则，即在classpath+packagename中'.'变成'\' 所表示的路径下能够找到相应的classname所指的class文件。
+
+$ java -classpath /c/Users/zbq/.m2/repository/com/alibaba/fastjson/1.2.73/fastjson-1.2.73.jar:/d/workspace/gitProjects/job_module/src/test/classes com.zbq.javactest.FileWCTest "D:\\workspace\\gitProjects\\job_module\\src\\test\\wc.txt" "D:\\workspace\\gitProjects\\job_module\\src\\test\\output.log"
+
+Jar 命令
+$ cd classes/
+zbq@DESKTOP-VUCA48E MINGW64 /d/workspace/gitProjects/job_module/src/test/classes (master)
+MANIFEST.MF 文件
+Manifest-Version: 1.0
+Main-Class: com.zbq.javactest.FileWCTest
+Class-Path: lib/xxx.jar
+这里第三行导入外部jar包文件，多个文件依赖用空格分隔， lib目录和打包后的jar文件在一个目录。
+$ jar -cvfm wc_app.jar MANIFEST.MF ./
+
+通过Extension classloader 来加载外部依赖：
+$ java -Djava.ext.dirs=$JAVA_HOME/jire/lib/ext:/c/Users/zbq/.m2/repository/com/alibaba/fastjson/1.2.73/ -jar wc_app.jar "D:\\workspace\\gitProjects\\job_module\\src\\test\\wc.txt" "D:\\workspace\\gitProjects\\job_module\\src\\test\\output.log"
+通过Appclassloader来加载外部依赖：
+在MANIFEST.MF中添加如下配置Class-Path，lib目录须与入口jar在同一个目录。
+Manifest-Version: 1.0
+Main-Class: com.zbq.javactest.FileWCTest
+Class-Path: lib/fastjson-1.2.73.jar lib/log4j-core-2.19.0.jar
+
+$ java -jar wc_app.jar "D:\\workspace\\gitProjects\\job_module\\src\\test\\wc.txt" "D:\\workspace\\gitProjects\\job_module\\src\\test\\output.log"                                                                {"a":3,"be":1,"will":1,"happy":1,"jing":1,"please":1,"is":1,"it":2,"good":2,"nice":1,"smile":1,"tian":1,"Hello":3,"keep":1,"hao":1,"have":2,"hello":4,"ni":2,"day":3,"you":1}
+Java -jar wc_app.jar方式运行时， Appclassloader 只会focus xx.jar 里面的类，此时-classpath 会失效，而无需指定-classpath
