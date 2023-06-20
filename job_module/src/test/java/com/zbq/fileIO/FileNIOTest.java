@@ -15,7 +15,7 @@ public class FileNIOTest {
 
     @Test
     public void nioReadTest() throws IOException, InterruptedException {
-        FileChannel fileChannel =new FileInputStream(STATIC_LOGIN_HTML).getChannel();
+        FileChannel fileChannel = new FileInputStream(STATIC_LOGIN_HTML).getChannel();
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
         int len;
         while ( (len = fileChannel.read(byteBuffer)) != -1 ){
